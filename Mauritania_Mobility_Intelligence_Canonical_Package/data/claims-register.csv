@@ -1,0 +1,8 @@
+claim_id,statement,classification,source,source_date,source_owner,geography,lane,confidence,status,validation_owner,next_action,last_reviewed
+CLM-001,"Diallo has relationships with government and mining companies in Mauritania",REPORTED,"Major editorial statement",2026-09-03,"Major Dream Williams",Mauritania,Automotive,medium,open,Diallo,"Name relationships and produce evidence of access",2026-09-03
+CLM-002,"Brother Ling has approached Chinese suppliers",REPORTED,"Major statement",2026-09-03,"Major Dream Williams",China,Automotive,medium,active,"Major / Brother Ling","Record supplier names and response authority",2026-09-03
+CLM-003,"Mauritania requires importer registration",VERIFIED,"U.S. ITA Mauritania Customs Regulations",2026-02-10,"International Trade Administration",Mauritania,Automotive,high,active,Diallo,"Confirm applicable local entity and current procedure with customs professional",2026-09-03
+CLM-004,"Special customs valuation rules may apply to used cars",VERIFIED,"U.S. ITA Mauritania Customs Regulations",2026-02-10,"International Trade Administration",Mauritania,Automotive,high,active,Diallo,"Obtain written current used-vehicle valuation procedure",2026-09-03
+CLM-005,"A preorder model can reduce inventory exposure",ASSUMPTION,"Program analysis",2026-09-03,"Program team",Mauritania,Automotive,medium,testing,Diallo,"Validate customer trust, deposit, delivery, and refund requirements",2026-09-03
+CLM-006,"Affluent early adopters will pay for distinctive Chinese SUVs",ASSUMPTION,"Major market hypothesis",2026-09-03,"Major Dream Williams",Mauritania,Automotive,low,testing,Diallo,"Conduct 25 buyer interviews and obtain qualified interest",2026-09-03
+
