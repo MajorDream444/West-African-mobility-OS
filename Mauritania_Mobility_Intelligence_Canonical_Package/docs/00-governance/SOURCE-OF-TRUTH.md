@@ -27,6 +27,10 @@ Higher-ranked evidence supersedes lower-ranked evidence for current decisions. S
 - Next action
 - Last reviewed
 
+## Conflict label
+
+Where two credible sources disagree and neither clearly outranks the other, classify the claim `CONFLICT` rather than choosing one. A `CONFLICT` claim may be used for internal planning with the disagreement stated, and may not be used externally until resolved. Current open conflicts: CLM-012 (statistical fee 1% vs 3%), CLM-013 (IMF 2.5% import vs 2% export).
+
 ## Relationship provenance
 
 Introductions and access must be recorded without implying ownership. Current reported chain:

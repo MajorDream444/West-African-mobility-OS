@@ -16,6 +16,9 @@ Maintain an auditable source of truth for the Mauritania automotive market-entry
 8. Preserve source provenance: who said what, when, in what capacity, and with what evidence.
 9. Use `HAMAL` exactly. HAMAL represents Hanzo, Art Mob AGInts, and Lux.
 10. Use `Diallo` exactly unless a source establishes a different legal spelling.
+11. Never publish a landed cost, retail price, or unit economic derived from an `ASSUMPTION` or `CONFLICT` input. The customs-broker opinion gates all external pricing.
+12. Never describe the program as an exclusive or authorized distributor. Jetour is already distributed in Senegal by Salvador Caetano (CLM-020).
+13. Where two credible sources disagree, label the claim `CONFLICT` and resolve it before external use. Do not silently pick one.
 
 ## Claim lifecycle
 
@@ -32,6 +35,10 @@ External materials may state that the initiative is exploring, evaluating, reque
 - Diallo: proposed Mauritania market-development lead, subject to evidence, performance, and written role definition.
 - Daou Dua: reported Marine Foundation representative in Mauritania and original relationship introducer; formal project role is open.
 - Chairman Tameo: Marine Foundation governance stakeholder; formal project role is open.
+
+## Agent skill layer
+
+Ten skills are specified in `docs/06-agents/HAMAL-AGENT-SKILL-ARCHITECTURE.md`, in gate-first build order. The two Wave 1 skills — `corridor-language-gate` and `corridor-evidence-clerk` — enforce the rules above automatically and should exist before any production skill.
 
 ## Definition of done for Phase 0
 

@@ -31,8 +31,18 @@ No vehicle purchase, dealership appointment, distributorship, exclusivity, joint
 - `docs/03-research/` - market baseline and research backlog
 - `docs/04-product/` - portal, CRM, dashboard, and data model
 - `docs/05-playbook/` - repeatable country-envoy playbook
+- `docs/06-agents/` - agent and skill architecture
 - `data/` - structured registers and schemas
+- `models/` - economic models
 - `artifacts/` - approved external deliverables
+
+## Current documents (v1.0, 6 September 2026)
+
+- `docs/03-research/CORRIDOR-DEEP-RESEARCH-DOSSIER-v1.0.md` - Q1-Q10 evidence layer with 14 tracked OPEN items
+- `docs/00-governance/ENTITY-AND-CAPITAL-ARCHITECTURE-MEMO.md` - entity map, Foundation firewall, ownership ladder instruments, investor sequencing
+- `docs/06-agents/HAMAL-AGENT-SKILL-ARCHITECTURE.md` - ten agent skills in gate-first build order
+- `models/Corridor_Economics_Model_v1.xlsx` - landed cost, pilot P&L, taxi ladder, workshop economics, scenarios
+- `docs/03-research/DOSSIER-RECONCILIATION-v1.1.md` - reconciles the 5 and 6 September dossiers; six resolved contradictions and eight plan changes
 
 ## Evidence discipline
 
@@ -43,6 +53,7 @@ Every material statement must be labeled as one of:
 - `ASSUMPTION` - used for planning and explicitly identified
 - `PROPOSAL` - a future structure being considered
 - `OPEN` - unresolved and assigned for validation
+- `CONFLICT` - two credible sources disagree; resolution required before external use
 
 The repository preserves historical statements even when later evidence changes the current truth.
 
