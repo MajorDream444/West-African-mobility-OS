@@ -1,0 +1,6 @@
+{
+  "name": "West African Mobility OS",
+  "description": "Evidence-led operating system for African-owned mobility, service, workforce, and entrepreneurial capacity - beginning with Mauritania and Senegal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

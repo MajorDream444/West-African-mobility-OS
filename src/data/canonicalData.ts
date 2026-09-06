@@ -1,0 +1,36 @@
+export { CANDIDATE_VEHICLES } from './vehicles';
+export { 
+  MECHANIC_CANDIDATES, 
+  MAPPED_WORKSHOPS 
+} from './workforceData';
+export { 
+  INDIVIDUAL_LEADS, 
+  FLEET_INQUIRIES, 
+  DEMO_ORGANIZATIONS 
+} from './crmData';
+export { 
+  CANONICAL_CLAIMS, 
+  CANONICAL_DECISIONS, 
+  PHASE_0_TASKS, 
+  SUPPLIER_PROPOSALS, 
+  COUNTRY_NODES, 
+  HISTORICAL_CLAIM_CORRECTION, 
+  DIALLO_SPRINT_QUESTIONS 
+} from './governanceData';
+export { SERVICE_READINESS_DETAILS } from './serviceReadinessData';
+
+import { CANDIDATE_VEHICLES } from './vehicles';
+import { MECHANIC_CANDIDATES, MAPPED_WORKSHOPS } from './workforceData';
+import { INDIVIDUAL_LEADS, FLEET_INQUIRIES, DEMO_ORGANIZATIONS } from './crmData';
+import { CANONICAL_CLAIMS, CANONICAL_DECISIONS, PHASE_0_TASKS, SUPPLIER_PROPOSALS, COUNTRY_NODES, HISTORICAL_CLAIM_CORRECTION, DIALLO_SPRINT_QUESTIONS } from './governanceData';
+import { CRMLead } from '../types';
+
+// Backward-compatible aliases
+export const VEHICLE_CATALOG = CANDIDATE_VEHICLES;
+export const SYSTEM_TASKS = PHASE_0_TASKS;
+export const SEEDED_CRM_LEADS: CRMLead[] = [
+  ...INDIVIDUAL_LEADS,
+  ...FLEET_INQUIRIES,
+  ...MECHANIC_CANDIDATES,
+  ...MAPPED_WORKSHOPS
+];
