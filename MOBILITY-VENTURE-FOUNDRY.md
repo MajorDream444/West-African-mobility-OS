@@ -46,19 +46,19 @@ The foundry's product is not a graduate. It is **an operating African-owned busi
 | **Shared operating platform (HAMAL)** | CRM, procurement, evidence, finance, fleet, service, credential infrastructure | Tenant workspace + data-rights agreement |
 | **Commercial corridor** | Customers, vehicles, institutional relationships, expansion markets | Demand contracts + country nodes |
 
-No system may operate without the other three. An academy without the corridor produces unemployed certificates. A corridor without the academy produces imported labour. A foundry without the platform produces founders who each rebuild the same back office. A platform without governance produces extraction.
+The complete foundry model may not be represented as operationally ready until all four systems are connected at the minimum level required by the applicable stage gate. Individual components may be researched, built, and tested during Phase 0. An academy without a path into the corridor risks producing unemployed certificates. A corridor without the academy risks imported labour. A foundry without the platform makes founders rebuild the same back office. A platform without governance risks extraction.
 
 ---
 
 ## 3. Constitutional commitments
 
-These are binding on the foundry, its agents, its operators, and any software built from this repository.
+These are proposed constitutional commitments. They become binding only when adopted through a recorded governance decision and, where required, implemented through appropriate legal instruments. Until then, they are mandatory design constraints for work produced from this repository and may not be represented as executed legal rights or obligations.
 
 ### 3.1 Ownership is earned, never granted by proximity
 Introductions, group-chat access, early presence, family relationship, cohort attendance, or verbal encouragement create **no** economic claim. Section 7 defines the only routes.
 
 ### 3.2 The participant owns their record
-A participant's credential, service history, performance record, and customer relationships are their portable property. If they leave the foundry, the record leaves with them in machine-readable form. See [`DATA-RIGHTS-POLICY.md`](./docs/foundry/DATA-RIGHTS-POLICY.md).
+A participant has rights of access, correction, consent, and portability over their credential, training, performance, and contribution records, subject to applicable law and legitimate safety, warranty, employment, and audit obligations. Venture customer relationships are governed separately under Section 3.3 and are not transferred to a participant merely because the participant serviced that customer. See [`DATA-RIGHTS-POLICY.md`](./docs/foundry/DATA-RIGHTS-POLICY.md).
 
 ### 3.3 The venture owns its customers
 HAMAL is infrastructure, not an intermediary that captures the customer relationship. A venture's customer records are the venture's. The platform's rights are limited, enumerated, revocable, and consented to in writing.
@@ -73,7 +73,7 @@ Agents, scorecards, and rubrics raise gates. They do not pass them. Every stage 
 The same classification rules that govern a landed-cost claim govern a claim about a participant's performance. "Diallo is ready to operate" is a claim requiring a source, a classification, and a validation owner — exactly like "the statistical fee is 1%."
 
 ### 3.7 Failure is published
-A venture that fails, a cohort with poor placement, a quarter with declining first-time-fix rates — these publish on the same schedule as successes. The `anti-extraction-audit` scorecard publishes unconditionally.
+Failures are reported with the same discipline and cadence as successes. The `anti-extraction-audit` publishes aggregate governance results, including poor results, subject to privacy, safety, legal, security, and legitimate commercial-confidentiality controls. Those controls may protect people and sensitive records; they may not be used to conceal programme performance.
 
 ### 3.8 No lane merging
 Marine Foundation's education lane, the commercial corridor's trading lane, the country operating companies, and the asset SPVs remain separately governed. The foundry may coordinate across them. It may not collapse them. Automotive, gold, and smart-city opportunities stay in separate commercial and compliance lanes.
@@ -162,10 +162,10 @@ Role mapping, artifact contracts, MOB assignment, and the Claude Cowork / Claude
 ## 9. Geography and replication
 
 - **Mauritania** — first founder-development node. Controlled market entry, evidence sprint, workshop registry, first operating cells.
-- **Senegal** — first training, mobility, and service accelerator. Train-the-trainer, parts pooling, regional quality assurance, driver-to-owner demonstrations.
+- **Senegal** — proposed training, service, parts, and quality-assurance accelerator. The first action remains the investigation required by `DEC-016`; no taxi demonstration or accelerator status is treated as approved before that evidence is recorded.
 - **West Africa** — replication horizon. Each node passes its own legal, demand, service, governance, and capital gates. No node inherits another's authorisation.
 
-Once mobility works as a foundry industry, the same architecture — academy, foundry, shared platform, commercial corridor — is portable to energy, logistics, construction, agriculture, mining services, housing, and smart-city infrastructure. **Mobility is the first industry, not the only one.** Nothing in this constitution should be written in a way that only makes sense for vehicles; where it is, that is a defect to fix.
+Once mobility works as a foundry industry, its proven general patterns may be proposed upstream for adaptation to energy, logistics, construction, agriculture, mining services, housing, and smart-city infrastructure. **Mobility is the first industry, not the only one.** Mobility-specific rules remain valid here; only patterns demonstrated to be reusable should become universal HAMAL doctrine.
 
 ---
 
