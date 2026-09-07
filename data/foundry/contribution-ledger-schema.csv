@@ -1,0 +1,12 @@
+dimension_id,dimension,measured_by,required_fields,common_failure,weighting_note
+LDG-01,Training completed,Verified credentials with external assessment,"participant_id,credential_id,assessor_id,assessment_date,external_assessor,evidence_class",Attendance counted as capability,Baseline
+LDG-02,Customers acquired,Named consented customer records with retention,"customer_id,acquisition_date,consent_ref,retention_periods,attribution_rule",Introductions counted as customers,Baseline
+LDG-03,Revenue generated,Booked and collected attributed by a stated rule,"amount,currency,period,collected_flag,attribution_rule,source_ref",Team revenue attributed to the loudest member,Baseline
+LDG-04,Assets managed,Asset value uptime and condition under their control,"asset_id,value,uptime_pct,condition_grade,period",Managing an asset nobody could damage,Baseline
+LDG-05,Capital contributed,Verified contribution with source of funds,"amount,currency,date,source_of_funds_ref,verification_ref",Promised capital treated as contributed,Baseline
+LDG-06,Risk accepted,Personal guarantee loss exposure unpaid build period,"risk_type,exposure_amount,instrument_ref,period",Claiming risk someone else carries,Baseline
+LDG-07,Service quality,First-time-fix rework warranty quality satisfaction,"ftf_rate,rework_rate,warranty_quality,csat,period",Volume without quality,Baseline
+LDG-08,Governance performance,Evidence discipline gate compliance honest reporting,"findings,gate_compliance,honest_unknown_count,period",Rewarding results achieved by breaking rules,Gate-blocking if negative
+LDG-09,Local team developed,Participants advanced a rung under their development,"participant_ids,rungs_advanced,period",Claiming credit for the cohort work,Baseline
+LDG-10,Intellectual property created,Curriculum SOPs tooling standards code,"artifact_ref,type,adoption_count,date",Restating existing doctrine as new IP,Baseline
+LDG-11,Ability to train successors,Successors independently certified,"successor_ids,independent_certification_refs,date",Indispensability mistaken for value,Weighted high by design
