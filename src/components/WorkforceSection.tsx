@@ -98,7 +98,7 @@ export const WorkforceSection: React.FC<WorkforceSectionProps> = ({
             Workforce Capacity Building
           </span>
           <span className="text-xs text-[#7e91a6]">
-            Constitutional Priority (DEC-005)
+            Proposed registry priority (DEC-008)
           </span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-[#f0f4f8] tracking-tight">
@@ -204,13 +204,13 @@ export const WorkforceSection: React.FC<WorkforceSectionProps> = ({
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#3b82f6]/20 text-[#60a5fa] border border-[#3b82f6]/30 uppercase tracking-wider">
                   Phase 0 Demonstration Roster
                 </span>
-                <span className="text-xs text-[#7e91a6]">20 Pre-Screened Candidates</span>
+                <span className="text-xs text-[#7e91a6]">Candidate count awaiting evidence</span>
               </div>
               <h3 className="text-xl font-bold text-[#f0f4f8]">
                 {t.workforce.cohortCardTitle}
               </h3>
               <p className="text-xs text-[#8ca1b8] mt-1">
-                Screened technicians ready for the 14-day intensive Chinese OEM academy in Nouakchott.
+                Demonstration workflow only. No technician screening, academy, instructor, schedule, or OEM participation is confirmed.
               </p>
             </div>
             <input
@@ -222,7 +222,7 @@ export const WorkforceSection: React.FC<WorkforceSectionProps> = ({
             />
           </div>
 
-          {/* Table of Screened Mechanics */}
+          {/* Fictional demonstration mechanics only */}
           <div className="overflow-x-auto max-h-[460px] overflow-y-auto">
             <table className="w-full text-xs text-left">
               <thead className="text-[11px] text-[#7e91a6] bg-[#121c2a] border-b border-[#1b2a3d] sticky top-0 uppercase tracking-wider">

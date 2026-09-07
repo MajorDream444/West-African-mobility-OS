@@ -38,7 +38,7 @@ export const IntakeForms: React.FC<IntakeFormsProps> = ({
     budgetRange: '$25,000 - $35,000 USD',
     primaryUsage: 'Conduite urbaine et déplacements régionaux',
     purchaseTimeline: 'D\'ici 60 jours',
-    depositReadiness: 'Prêt à verser un acompte sur séquestre bancaire vérifié',
+    depositReadiness: 'Non demandé — les dépôts sont bloqués',
     notes: '',
   });
 
@@ -95,7 +95,7 @@ export const IntakeForms: React.FC<IntakeFormsProps> = ({
     setIsSubmitting(true);
     setTimeout(() => {
       const newLead: PersonalInquiry = {
-        id: `LEAD-${Date.now().toString().slice(-4)}`,
+        id: `DEMO-BUY-${Date.now().toString().slice(-6)}`,
         type: 'personal',
         fullName: personalForm.fullName,
         phone: personalForm.phone,
@@ -122,7 +122,7 @@ export const IntakeForms: React.FC<IntakeFormsProps> = ({
     setIsSubmitting(true);
     setTimeout(() => {
       const newLead: FleetInquiry = {
-        id: `FLEET-${Date.now().toString().slice(-4)}`,
+        id: `DEMO-FLEET-${Date.now().toString().slice(-6)}`,
         type: 'fleet',
         orgName: fleetForm.orgName,
         contactName: fleetForm.contactName,
@@ -152,7 +152,7 @@ export const IntakeForms: React.FC<IntakeFormsProps> = ({
     setIsSubmitting(true);
     setTimeout(() => {
       const newLead: MechanicRegistration = {
-        id: `MECH-${Date.now().toString().slice(-4)}`,
+        id: `DEMO-MECH-${Date.now().toString().slice(-6)}`,
         type: 'mechanic',
         fullName: mechanicForm.fullName,
         phone: mechanicForm.phone,
@@ -166,10 +166,10 @@ export const IntakeForms: React.FC<IntakeFormsProps> = ({
         hasDiagnosticExperience: mechanicForm.hasDiagnosticExperience,
         trainingCohortInterest: mechanicForm.trainingCohortInterest,
         pathwayStage: 'Apprentice',
-        readinessRating: 'Medium',
+        readinessRating: 'Screening Needed',
         createdAt: new Date().toISOString().replace('T', ' ').slice(0, 16),
-        status: 'Cohort Candidate',
-        nextAction: 'Initial Diagnostic Screening',
+        status: 'Browser-only demonstration submission — not screened',
+        nextAction: 'Human review and consent verification required',
       };
       onLeadSubmitted(newLead);
       setIsSubmitting(false);
@@ -182,7 +182,7 @@ export const IntakeForms: React.FC<IntakeFormsProps> = ({
     setIsSubmitting(true);
     setTimeout(() => {
       const newLead: WorkshopRegistration = {
-        id: `SHOP-${Date.now().toString().slice(-4)}`,
+        id: `DEMO-WS-${Date.now().toString().slice(-6)}`,
         type: 'workshop',
         businessName: workshopForm.businessName,
         ownerName: workshopForm.ownerName,
@@ -193,17 +193,17 @@ export const IntakeForms: React.FC<IntakeFormsProps> = ({
         liftCount: Number(workshopForm.liftCount),
         hasThreePhasePower: workshopForm.hasThreePhasePower,
         diagnosticToolsOwned: workshopForm.diagnosticToolsOwned,
-        electricalCapability: true,
+        electricalCapability: false,
         hybridEvReadiness: false,
-        partsStorageSpace: workshopForm.partsStorageSpace || '25m² Secure Storage',
-        technicianCount: 4,
+        partsStorageSpace: workshopForm.partsStorageSpace || 'Not verified',
+        technicianCount: 0,
         languagesSpoken: ['French', 'Arabic', 'Hassaniya'],
-        fleetServiceCapability: true,
-        trainingInterest: true,
-        readinessScore: 72,
+        fleetServiceCapability: false,
+        trainingInterest: false,
+        readinessScore: 0,
         createdAt: new Date().toISOString().replace('T', ' ').slice(0, 16),
-        status: 'New Audit Candidate',
-        nextAction: 'Physical Facility Inspection',
+        status: 'Browser-only demonstration submission — not assessed',
+        nextAction: 'Human review and consent verification required',
       };
       onLeadSubmitted(newLead);
       setIsSubmitting(false);
@@ -391,15 +391,13 @@ export const IntakeForms: React.FC<IntakeFormsProps> = ({
                   </div>
 
                   <div>
-                    <label className="block text-[#8fa4bb] mb-1 font-medium">{t.forms.depositWillingness}</label>
+                    <label className="block text-[#8fa4bb] mb-1 font-medium">Payment information</label>
                     <select
                       value={personalForm.depositReadiness}
                       onChange={(e) => setPersonalForm({ ...personalForm, depositReadiness: e.target.value })}
                       className="w-full p-2.5 bg-[#0c131c] border border-[#202f43] rounded-lg text-white focus:outline-none focus:border-[#b58a35]"
                     >
-                      <option value="Prêt à verser un acompte sur séquestre bancaire vérifié">Prêt à verser un acompte sur séquestre bancaire vérifié</option>
-                      <option value="Paiement uniquement à la livraison à Nouakchott">Paiement uniquement à la livraison à Nouakchott</option>
-                      <option value="Intéressé par une formule de crédit ou leasing bancaire">Intéressé par une formule de crédit ou leasing bancaire</option>
+                      <option value="Non demandé — les dépôts sont bloqués">Non demandé — aucun paiement ou dépôt accepté</option>
                     </select>
                   </div>
                 </div>

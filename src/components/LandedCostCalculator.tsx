@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../data/translations';
 import { CANDIDATE_VEHICLES } from '../data/canonicalData';
+import { publicationGate } from '../data/publicationGate';
 import { Calculator, DollarSign, ArrowRight, Info, AlertTriangle, ShieldCheck, RefreshCw } from 'lucide-react';
 
 interface LandedCostCalculatorProps {
@@ -10,6 +11,16 @@ interface LandedCostCalculatorProps {
 
 export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ currentLanguage }) => {
   const t = TRANSLATIONS[currentLanguage];
+
+  if (!publicationGate.publicPricesAllowed) {
+    return (
+      <section className="rounded-2xl border border-amber-500/40 bg-[#101925] p-8">
+        <h2 className="text-xl font-bold text-amber-300">Landed-cost publication blocked</h2>
+        <p className="mt-3 text-sm text-[#9fb1c5]">{publicationGate.reason}</p>
+        <p className="mt-2 text-xs text-[#7e91a6]">Resolve {publicationGate.blockingClaimIds.join(', ')} through the canonical evidence process before displaying or calculating public prices.</p>
+      </section>
+    );
+  }
 
   // Selected base vehicle or custom
   const [selectedVehicleId, setSelectedVehicleId] = useState<string>(CANDIDATE_VEHICLES[0].id);
@@ -57,8 +68,6 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
   const totalLandedCostMru = totalLandedCostUsd * exchangeRate;
   const suggestedRetailUsd = totalLandedCostUsd * (1 + targetMargin / 100);
   const suggestedRetailMru = suggestedRetailUsd * exchangeRate;
-  const clientSavingsUsd = benchmarkPrice - suggestedRetailUsd;
-  const clientSavingsPercent = benchmarkPrice > 0 ? ((clientSavingsUsd / benchmarkPrice) * 100) : 0;
 
   return (
     <div className="bg-[#0e1622] border border-[#1e2e42] rounded-2xl p-6 sm:p-8">
@@ -294,12 +303,10 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
                 </div>
               </div>
 
-              {/* Savings vs Incumbent */}
+              {/* Benchmark comparison is not published without verified evidence. */}
               <div className="pt-2 border-t border-[#20344d] flex items-center justify-between text-xs">
-                <span className="text-[#8fa4bb]">vs. Incumbent Benchmark (${benchmarkPrice.toLocaleString()}):</span>
-                <span className="font-bold text-[#34d399] bg-[#10b981]/15 px-2 py-0.5 rounded border border-[#10b981]/30">
-                  Save ${Math.round(clientSavingsUsd).toLocaleString()} ({clientSavingsPercent.toFixed(0)}%)
-                </span>
+                <span className="text-[#8fa4bb]">Comparative savings claim:</span>
+                <span className="font-bold text-amber-300">Awaiting verified market evidence</span>
               </div>
             </div>
           </div>

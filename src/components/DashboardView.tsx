@@ -42,7 +42,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   >((initialTab as any) || 'overview');
   
   // Claims state
-  const [claims, setClaims] = useState<Claim[]>(CANONICAL_CLAIMS);
+  const [claims, setClaims] = useState<Claim[]>([...CANONICAL_CLAIMS]);
   const [claimFilter, setClaimFilter] = useState<string>('all');
   const [claimLaneFilter, setClaimLaneFilter] = useState<string>('all');
   const [claimSearch, setClaimSearch] = useState<string>('');
@@ -104,10 +104,10 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   const handleAddClaim = (e: React.FormEvent) => {
     e.preventDefault();
     const created: Claim = {
-      claim_id: `CLM-0${claims.length + 1 > 9 ? claims.length + 1 : '0' + (claims.length + 1)}`,
+      claim_id: `DEMO-FINDING-${Date.now()}`,
       statement: newClaim.statement,
       classification: newClaim.classification,
-      source: newClaim.source || 'Field Observation',
+      source: newClaim.source || 'Browser-only demonstration note',
       source_date: new Date().toISOString().slice(0, 10),
       source_owner: newClaim.source_owner,
       geography: 'Mauritania',
@@ -117,7 +117,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       validation_owner: 'Diallo',
       next_action: newClaim.next_action,
       last_reviewed: new Date().toISOString().slice(0, 10),
-      public_visibility: true,
+      public_visibility: false,
     };
     setClaims([created, ...claims]);
     setNewClaimOpen(false);
@@ -237,7 +237,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             Phase 0 • Evidence Sprint Active
           </span>
           <span className="text-[11px] text-[#7e94ac] hidden md:inline">
-            Executive Leads: Major Dream Williams & Diallo
+            Role simulation only — not authentication • Diallo: Proposed Mauritania Market-Development Lead
           </span>
         </div>
       </div>
@@ -253,8 +253,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             { id: 'sprint', label: `Diallo 20-Q Sprint (${sprintQuestions.filter(q => q.status === 'Complete').length}/20)`, icon: <Clock className="w-3.5 h-3.5" /> },
             { id: 'workforce', label: 'Workforce & Service Network', icon: <Wrench className="w-3.5 h-3.5" /> },
             { id: 'crm', label: `Demand Pipeline (${leads.length})`, icon: <Users className="w-3.5 h-3.5" /> },
-            { id: 'sheets', label: 'Google Sheets CRM Hub', icon: <FileSpreadsheet className="w-3.5 h-3.5 text-[#34a853]" /> },
-            { id: 'decisions', label: `Decisions Register (6)`, icon: <FileText className="w-3.5 h-3.5" /> },
+            { id: 'sheets', label: 'Browser-only Demo CRM', icon: <FileSpreadsheet className="w-3.5 h-3.5 text-[#34a853]" /> },
+            { id: 'decisions', label: `Decisions Register (${CANONICAL_DECISIONS.length})`, icon: <FileText className="w-3.5 h-3.5" /> },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -1440,7 +1440,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
         )}
 
-        {/* Google Sheets Live CRM & Market Intelligence Hub */}
+        {/* External CRM integration is disabled in this demonstration. */}
         {activeTab === 'sheets' && (
           <GoogleSheetsManager
             currentLanguage={currentLanguage}

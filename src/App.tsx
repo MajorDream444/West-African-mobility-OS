@@ -14,7 +14,7 @@ import { DisclosuresSection } from './components/DisclosuresSection';
 import { DashboardView } from './components/DashboardView';
 import { VehicleDetailModal } from './components/VehicleDetailModal';
 import { Footer } from './components/Footer';
-import { appendLeadToSheet } from './services/googleSheets';
+import { documentLanguage } from './i18n';
 
 export const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<'portal' | 'dashboard'>('portal');
@@ -26,7 +26,7 @@ export const App: React.FC = () => {
     return localStorage.getItem('wamos_active_sheet_id');
   });
 
-  // Leads storage initialized from canonical seed + localStorage
+  // Browser-only demonstration persistence. This is not a database or authenticated store.
   const [leads, setLeads] = useState<CRMLead[]>(() => {
     const saved = localStorage.getItem('mauritania_mobility_leads');
     if (saved) {
@@ -44,20 +44,16 @@ export const App: React.FC = () => {
   const [isDetailOpen, setIsDetailOpen] = useState<boolean>(false);
   const [preselectedVehicleId, setPreselectedVehicleId] = useState<string | undefined>(undefined);
 
-  // Sync leads to localStorage
+  // Browser-only demonstration persistence.
   useEffect(() => {
     localStorage.setItem('mauritania_mobility_leads', JSON.stringify(leads));
   }, [leads]);
 
   // Handle RTL for Arabic
   useEffect(() => {
-    if (currentLanguage === 'ar') {
-      document.documentElement.dir = 'rtl';
-      document.documentElement.lang = 'ar';
-    } else {
-      document.documentElement.dir = 'ltr';
-      document.documentElement.lang = currentLanguage;
-    }
+    const attributes = documentLanguage(currentLanguage);
+    document.documentElement.dir = attributes.dir;
+    document.documentElement.lang = attributes.lang;
   }, [currentLanguage]);
 
   const handleSelectVehicle = (vehicle: VehicleModel) => {
@@ -73,11 +69,6 @@ export const App: React.FC = () => {
 
   const handleLeadSubmitted = (newLead: CRMLead) => {
     setLeads((prev) => [newLead, ...prev]);
-    if (activeSpreadsheetId) {
-      appendLeadToSheet(activeSpreadsheetId, newLead).catch((err) => {
-        console.warn('Could not auto-append lead to connected Google Sheet:', err);
-      });
-    }
   };
 
   const handleUpdateLeadStatus = (leadId: string, newStage: string) => {
@@ -108,6 +99,9 @@ export const App: React.FC = () => {
 
   return (
     <div className={`min-h-screen bg-[#0c131c] text-[#f0f4f8] ${currentLanguage === 'ar' ? 'font-cairo' : 'font-sans'}`}>
+      <div role="status" className="bg-amber-950 px-4 py-2 text-center text-xs font-semibold text-amber-200">
+        Demonstration environment • Browser-only persistence • Role switching is simulation, not authentication • Publication and payments are blocked
+      </div>
       {/* Top Universal Navigation Header */}
       <Header
         currentView={currentView}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../data/translations';
 import { CANONICAL_CLAIMS, HISTORICAL_CLAIM_CORRECTION, CANONICAL_DECISIONS } from '../data/canonicalData';
+import { publicationGate } from '../data/publicationGate';
 import { ShieldAlert, FileText, CheckCircle2, History, AlertTriangle, ArrowRight, Eye, ShieldCheck, Scale } from 'lucide-react';
 
 interface DisclosuresSectionProps {
@@ -19,7 +20,7 @@ export const DisclosuresSection: React.FC<DisclosuresSectionProps> = ({
   const statusItems = [
     { label: t.statusTicker.activeStatus, value: "Phase 0 Evidence Sprint", status: "Active" },
     { label: "Supplier Discovery", value: t.statusTicker.candidateModels, status: "Active" },
-    { label: "Landed Pricing", value: t.statusTicker.landedPrices, status: "Pending Dry-Run" },
+    { label: "Landed Pricing", value: `Blocked by ${publicationGate.blockingClaimIds.join(', ')}`, status: "Publication Blocked" },
     { label: "OEM Authorization", value: t.statusTicker.oemAuth, status: "Transparent" },
     { label: "Customer Deposits", value: t.statusTicker.deposits, status: "Gated (Zero Deposit)" },
     { label: "Commercial Authority", value: "Evaluation Only • No Sovereign Mandate", status: "Strict" }
@@ -60,6 +61,13 @@ export const DisclosuresSection: React.FC<DisclosuresSectionProps> = ({
       label: t.disclosures.open,
       description: t.disclosures.openDesc,
       count: CANONICAL_CLAIMS.filter(c => c.classification === 'OPEN').length
+    },
+    {
+      code: "CONFLICT",
+      color: "bg-[#ef4444]/20 text-[#f87171] border-[#ef4444]/40",
+      label: "Conflict",
+      description: "Credible sources disagree; external use is blocked until resolution.",
+      count: CANONICAL_CLAIMS.filter(c => c.classification === 'CONFLICT').length
     }
   ];
 
@@ -148,7 +156,7 @@ export const DisclosuresSection: React.FC<DisclosuresSectionProps> = ({
                   Current Operative Decision (DEC-002)
                 </span>
                 <span className="text-[10px] px-2 py-0.5 rounded bg-[#10b981]/15 text-[#34d399] border border-[#10b981]/30 font-bold">
-                  VERIFIED & CURRENT
+                  CURRENT DECISION
                 </span>
               </div>
               <blockquote className="text-sm font-semibold text-[#f0f4f8] mb-2">
@@ -165,7 +173,7 @@ export const DisclosuresSection: React.FC<DisclosuresSectionProps> = ({
           </div>
         </div>
 
-        {/* The 5 Evidence Classifications Legend */}
+        {/* The 6 Evidence Classifications Legend */}
         <div className="bg-[#0e1622] border border-[#1d2b3d] rounded-2xl p-6 sm:p-8 mb-10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
@@ -180,12 +188,12 @@ export const DisclosuresSection: React.FC<DisclosuresSectionProps> = ({
               onClick={() => onOpenDashboard('evidence')}
               className="px-4 py-2 rounded-lg bg-[#1a293b] text-[#9fc7f5] hover:bg-[#233852] border border-[#274060] text-xs font-semibold transition-colors flex items-center gap-1.5 w-fit"
             >
-              <span>View Full 14-Claim Evidence Register</span>
+              <span>View Full {CANONICAL_CLAIMS.length}-Claim Evidence Register</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 mb-6">
             {classifications.map((c) => (
               <div key={c.code} className="bg-[#121c29] border border-[#1c2c3e] rounded-xl p-3.5 flex flex-col justify-between">
                 <div>
@@ -214,7 +222,7 @@ export const DisclosuresSection: React.FC<DisclosuresSectionProps> = ({
             >
               All Public Claims ({CANONICAL_CLAIMS.filter(c => c.public_visibility).length})
             </button>
-            {['VERIFIED', 'REPORTED', 'ASSUMPTION', 'PROPOSAL'].map((cl) => (
+            {['VERIFIED', 'REPORTED', 'ASSUMPTION', 'PROPOSAL', 'OPEN', 'CONFLICT'].map((cl) => (
               <button
                 key={cl}
                 onClick={() => setFilterClass(cl)}
@@ -243,7 +251,11 @@ export const DisclosuresSection: React.FC<DisclosuresSectionProps> = ({
                         ? 'bg-[#3b82f6]/20 text-[#60a5fa] border-[#3b82f6]/40'
                         : claim.classification === 'ASSUMPTION'
                         ? 'bg-[#f59e0b]/20 text-[#fbbf24] border-[#f59e0b]/40'
-                        : 'bg-[#8b5cf6]/20 text-[#c084fc] border-[#8b5cf6]/40'
+                        : claim.classification === 'PROPOSAL'
+                        ? 'bg-[#8b5cf6]/20 text-[#c084fc] border-[#8b5cf6]/40'
+                        : claim.classification === 'CONFLICT'
+                        ? 'bg-[#ef4444]/20 text-[#f87171] border-[#ef4444]/40'
+                        : 'bg-[#ec4899]/20 text-[#f472b6] border-[#ec4899]/40'
                     }`}>
                       {claim.classification}
                     </span>

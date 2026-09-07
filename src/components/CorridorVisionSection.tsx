@@ -90,14 +90,14 @@ export const CorridorVisionSection: React.FC<CorridorVisionSectionProps> = ({
               </div>
               <div className="bg-[#0b121a] p-3 rounded-xl border border-[#172535]">
                 <span className="font-semibold text-[#f0f4f8] block mb-0.5">Ground Verification Lead:</span>
-                <span className="text-[#e0b555]">Diallo (Proposed Mauritania Market Lead, ref: DEC-004)</span>
+                <span className="text-[#e0b555]">Diallo — Proposed Mauritania Market-Development Lead (DEC-004)</span>
               </div>
             </div>
           </div>
 
           <div className="pt-4 border-t border-[#182637] flex items-center justify-between">
-            <span className="text-xs font-bold text-[#f0f4f8]">Node Readiness Score:</span>
-            <span className="text-sm font-extrabold text-[#34d399]">78 / 100</span>
+            <span className="text-xs font-bold text-[#f0f4f8]">Readiness:</span>
+            <span className="text-sm font-extrabold text-[#fbbf24]">Not yet verified</span>
           </div>
         </div>
 
@@ -128,7 +128,7 @@ export const CorridorVisionSection: React.FC<CorridorVisionSectionProps> = ({
             <div className="space-y-3 mb-6 text-xs">
               <div className="bg-[#0b121a] p-3 rounded-xl border border-[#172535]">
                 <span className="font-semibold text-[#f0f4f8] block mb-0.5">Regional Value-Add:</span>
-                <span className="text-[#7e91a6]">Technical training university linkages, high-voltage battery rebuild, cross-border parts pooling</span>
+                <span className="text-[#7e91a6]">Proposed service, parts, training and quality-assurance role; relationships remain unverified</span>
               </div>
               <div className="bg-[#0b121a] p-3 rounded-xl border border-[#172535]">
                 <span className="font-semibold text-[#f0f4f8] block mb-0.5">Corridor Connection:</span>
@@ -136,14 +136,14 @@ export const CorridorVisionSection: React.FC<CorridorVisionSectionProps> = ({
               </div>
               <div className="bg-[#0b121a] p-3 rounded-xl border border-[#172535]">
                 <span className="font-semibold text-[#f0f4f8] block mb-0.5">Governance Status:</span>
-                <span className="text-[#60a5fa]">Evidence-gated scoping under VISION.md (ref: CLM-012)</span>
+                <span className="text-[#60a5fa]">Evidence-gated scoping under DEC-007 and DEC-016</span>
               </div>
             </div>
           </div>
 
           <div className="pt-4 border-t border-[#182637] flex items-center justify-between">
-            <span className="text-xs font-bold text-[#f0f4f8]">Node Readiness Score:</span>
-            <span className="text-sm font-extrabold text-[#e0b555]">42 / 100</span>
+            <span className="text-xs font-bold text-[#f0f4f8]">Readiness:</span>
+            <span className="text-sm font-extrabold text-[#fbbf24]">Proposed — evidence required</span>
           </div>
         </div>
       </div>

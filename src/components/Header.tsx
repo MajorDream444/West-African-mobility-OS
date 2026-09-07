@@ -161,7 +161,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           </div>
 
-          {/* Google Sheets Quick Launcher */}
+          {/* Disabled external CRM demonstration */}
           <button
             onClick={() => {
               if (onOpenSheets) {
@@ -170,11 +170,11 @@ export const Header: React.FC<HeaderProps> = ({
                 onViewChange('dashboard');
               }
             }}
-            title="Google Sheets Live CRM Hub"
+            title="External CRM disabled in demonstration"
             className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#0f9d58]/15 hover:bg-[#0f9d58]/25 text-[#34a853] border border-[#0f9d58]/35 text-xs font-semibold transition-colors"
           >
             <FileSpreadsheet className="w-3.5 h-3.5" />
-            <span className="hidden md:inline">Google Sheets</span>
+            <span className="hidden md:inline">Demo CRM</span>
           </button>
 
           {/* Mode Switcher: Portal vs Dashboard */}

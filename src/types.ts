@@ -1,6 +1,6 @@
 export type Language = 'en' | 'fr' | 'ar';
 
-export type EvidenceClassification = 'VERIFIED' | 'REPORTED' | 'ASSUMPTION' | 'PROPOSAL' | 'OPEN';
+export type EvidenceClassification = 'VERIFIED' | 'REPORTED' | 'ASSUMPTION' | 'PROPOSAL' | 'OPEN' | 'CONFLICT';
 
 export type OperatorRole = 'major' | 'diallo' | 'ling' | 'auditor';
 
@@ -14,13 +14,13 @@ export interface Claim {
   geography: string;
   lane: string;
   confidence: 'high' | 'medium' | 'low';
-  status: 'active' | 'open' | 'testing' | 'verified' | 'contradicted' | 'superseded';
+  status: string;
   validation_owner: string;
   next_action: string;
   last_reviewed: string;
   superseded_by?: string;
   historical_context?: string;
-  public_visibility: boolean;
+  public_visibility?: boolean;
 }
 
 export interface Decision {
@@ -29,12 +29,12 @@ export interface Decision {
   decision: string;
   status: 'Current' | 'Under Review' | 'Superseded';
   rationale: string;
-  affected_surfaces: string;
-  owner: string;
+  affected_surfaces?: string;
+  owner?: string;
 }
 
 export interface VehicleModel {
-  id: string;
+  id: `DEMO-${string}`;
   candidateCode: string; // e.g. "Candidate Model A"
   genericName: string;   // e.g. "Desert SUV Concept"
   brand: string;         // e.g. "Jetour (Chery Group)" or "Candidate Supplier A"
@@ -103,7 +103,7 @@ export interface VehicleModel {
 }
 
 export interface SupplierProposal {
-  id: string;
+  id: `DEMO-${string}`;
   supplierCode: string;
   manufacturer: string;
   representativeChannel: string;
@@ -148,7 +148,7 @@ export type CRMStage =
   | 'Closed / not proceeding';
 
 export interface PersonalInquiry {
-  id: string;
+  id: `DEMO-${string}`;
   type: 'personal';
   fullName: string;
   phone: string;
@@ -167,7 +167,7 @@ export interface PersonalInquiry {
 }
 
 export interface FleetInquiry {
-  id: string;
+  id: `DEMO-${string}`;
   type: 'fleet';
   orgName: string;
   contactName: string;
@@ -188,7 +188,7 @@ export interface FleetInquiry {
 }
 
 export interface MechanicRegistration {
-  id: string;
+  id: `DEMO-${string}`;
   type: 'mechanic';
   fullName: string;
   phone: string;
@@ -210,7 +210,7 @@ export interface MechanicRegistration {
 }
 
 export interface WorkshopRegistration {
-  id: string;
+  id: `DEMO-${string}`;
   type: 'workshop';
   businessName: string;
   ownerName: string;
@@ -241,7 +241,7 @@ export type WorkshopLead = WorkshopRegistration;
 export type VehicleCandidate = VehicleModel;
 
 export interface TaskItem {
-  id: string;
+  id: `DEMO-${string}`;
   title: string;
   stream: 
     | 'Brother Ling / Supplier' 
@@ -259,7 +259,7 @@ export interface TaskItem {
 }
 
 export interface Organization {
-  id: string;
+  id: `DEMO-${string}`;
   name: string;
   sector: 'Mining' | 'Construction' | 'Logistics' | 'Banking & Corporate' | 'NGO & International' | 'Government / Public' | 'Taxi & Managed Mobility';
   city: string;

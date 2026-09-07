@@ -20,7 +20,7 @@ export const HowOrderingWorks: React.FC<HowOrderingWorksProps> = ({
       icon: <Search className="w-5 h-5 text-[#e0b555]" />,
       title: t.ordering.step1,
       desc: t.ordering.step1Desc,
-      badge: "Completed",
+      badge: "Evidence Required",
       badgeColor: "bg-[#10b981]/20 text-[#34d399] border-[#10b981]/40"
     },
     {
@@ -28,7 +28,7 @@ export const HowOrderingWorks: React.FC<HowOrderingWorksProps> = ({
       icon: <FileCheck className="w-5 h-5 text-[#60a5fa]" />,
       title: t.ordering.step2,
       desc: t.ordering.step2Desc,
-      badge: "In Progress",
+      badge: "Evidence Required",
       badgeColor: "bg-[#3b82f6]/20 text-[#60a5fa] border-[#3b82f6]/40"
     },
     {
@@ -36,7 +36,7 @@ export const HowOrderingWorks: React.FC<HowOrderingWorksProps> = ({
       icon: <Users className="w-5 h-5 text-[#34d399]" />,
       title: t.ordering.step3,
       desc: t.ordering.step3Desc,
-      badge: "Active Intake",
+      badge: "Demo Workflow",
       badgeColor: "bg-[#10b981]/20 text-[#34d399] border-[#10b981]/40"
     },
     {
@@ -44,7 +44,7 @@ export const HowOrderingWorks: React.FC<HowOrderingWorksProps> = ({
       icon: <Wrench className="w-5 h-5 text-[#f472b6]" />,
       title: t.ordering.step4,
       desc: t.ordering.step4Desc,
-      badge: "Pre-Screened",
+      badge: "Not Yet Screened",
       badgeColor: "bg-[#ec4899]/20 text-[#f472b6] border-[#ec4899]/40"
     },
     {
@@ -52,7 +52,7 @@ export const HowOrderingWorks: React.FC<HowOrderingWorksProps> = ({
       icon: <Landmark className="w-5 h-5 text-[#c084fc]" />,
       title: t.ordering.step5,
       desc: t.ordering.step5Desc,
-      badge: "Bank Escrow",
+      badge: "Blocked Pending Counsel",
       badgeColor: "bg-[#a855f7]/20 text-[#c084fc] border-[#a855f7]/40"
     },
     {
@@ -60,7 +60,7 @@ export const HowOrderingWorks: React.FC<HowOrderingWorksProps> = ({
       icon: <Ship className="w-5 h-5 text-[#38bdf8]" />,
       title: t.ordering.step6,
       desc: t.ordering.step6Desc,
-      badge: "2-Unit Demo",
+      badge: "Not Authorized",
       badgeColor: "bg-[#0284c7]/20 text-[#38bdf8] border-[#0284c7]/40"
     },
     {
@@ -68,7 +68,7 @@ export const HowOrderingWorks: React.FC<HowOrderingWorksProps> = ({
       icon: <GraduationCap className="w-5 h-5 text-[#fbbf24]" />,
       title: t.ordering.step7,
       desc: t.ordering.step7Desc,
-      badge: "14-Day Cohort",
+      badge: "Proposed",
       badgeColor: "bg-[#f59e0b]/20 text-[#fbbf24] border-[#f59e0b]/40"
     },
     {
@@ -142,10 +142,10 @@ export const HowOrderingWorks: React.FC<HowOrderingWorksProps> = ({
             </div>
             <div>
               <h4 className="text-base font-bold text-[#f0f4f8] mb-1">
-                Zero Phase 0 Deposit Mandate (DEC-004)
+                Phase 0 Deposit and Publication Gate (DEC-009)
               </h4>
               <p className="text-xs text-[#8ca1b8] leading-relaxed max-w-2xl">
-                To protect consumer and institutional capital, no deposits or reservations are accepted during Phase 0. Future Phase 1 transactions will operate strictly through licensed Mauritanian commercial bank escrow accounts with verifiable bill-of-lading release milestones.
+                No deposits or reservations are accepted. Any future deposit flow remains blocked until a full commercial loop is proven and qualified counsel approves the entity, custody, contract, refund, import, warranty, service and risk-allocation structure.
               </p>
             </div>
           </div>

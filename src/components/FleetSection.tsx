@@ -77,7 +77,7 @@ export const FleetSection: React.FC<FleetSectionProps> = ({
         { name: "Candidate Model A (Desert SUV Concept)", id: "candidate-model-a" }
       ],
       keyDutyCycle: "Hodh Ech Chargui (Néma/Bassikounou) remote refugee camp logistics",
-      partsRequirement: "Tax-exempt import support (CLM-008) and remote mobile spares kit"
+      partsRequirement: "Awaiting verified import treatment and service documentation"
     },
     {
       id: "Taxi & Managed Mobility",

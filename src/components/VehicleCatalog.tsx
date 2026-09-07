@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { VehicleModel, Language } from '../types';
 import { CANDIDATE_VEHICLES } from '../data/canonicalData';
 import { TRANSLATIONS } from '../data/translations';
+import { publicationGate } from '../data/publicationGate';
 import { Search, Filter, Compass, Thermometer, ShieldAlert, ArrowUpRight, Gauge, Check } from 'lucide-react';
 
 interface VehicleCatalogProps {
@@ -44,7 +45,7 @@ export const VehicleCatalog: React.FC<VehicleCatalogProps> = ({
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-2">
             <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-[#b58a35]/20 text-[#e0b555] border border-[#b58a35]/40 tracking-wider uppercase">
-              RFP Portfolio • DEC-002
+              Candidate-model request • DEC-002
             </span>
             <span className="text-xs text-[#7e91a6]">10 Candidate Models Target</span>
           </div>
@@ -100,14 +101,6 @@ export const VehicleCatalog: React.FC<VehicleCatalogProps> = ({
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredVehicles.map((vehicle) => {
-            // Estimated turnkey landed calculation
-            const avgFob = (vehicle.indicativeFobUsd.min + vehicle.indicativeFobUsd.max) / 2;
-            const cif = avgFob + vehicle.estimatedFreightUsd;
-            const tariff = cif * vehicle.dutyRatePct;
-            const vat = (cif + tariff) * vehicle.vatRatePct;
-            const approxLandedUsd = Math.round(cif + tariff + vat + vehicle.localPortAndDocUsd);
-            const approxLandedMru = Math.round(approxLandedUsd * 39.8);
-
             return (
               <div
                 key={vehicle.id}
@@ -174,25 +167,10 @@ export const VehicleCatalog: React.FC<VehicleCatalogProps> = ({
                     </div>
                   </div>
 
-                  {/* Pricing Box */}
+                  {/* Canonical publication gate */}
                   <div className="bg-[#131d2a] p-3 rounded-lg border border-[#1c2a3c] space-y-1.5">
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-[#7d90a4]">{t.catalog.fobEstimate} :</span>
-                      <span className="font-semibold text-white">
-                        ${vehicle.indicativeFobUsd.min.toLocaleString()} - ${vehicle.indicativeFobUsd.max.toLocaleString()}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-baseline text-xs pt-1 border-t border-[#1a2637]">
-                      <span className="text-[#b58a35] font-medium">{t.catalog.landedEstimate} :</span>
-                      <div className="text-right">
-                        <span className="font-bold text-white block">
-                          ~${approxLandedUsd.toLocaleString()} <span className="text-[10px] text-[#7d90a4]">USD</span>
-                        </span>
-                        <span className="text-[11px] text-[#e0b555] font-medium">
-                          ≈ {approxLandedMru.toLocaleString()} MRU
-                        </span>
-                      </div>
-                    </div>
+                    <div className="text-xs font-semibold text-[#fbbf24]">Public pricing blocked</div>
+                    <div className="text-[11px] text-[#8fa4bb]">{publicationGate.reason} Blocking claims: {publicationGate.blockingClaimIds.join(', ')}.</div>
                   </div>
 
                   {/* Actions */}

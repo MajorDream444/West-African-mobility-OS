@@ -1,6 +1,7 @@
 import React from 'react';
 import { VehicleModel, Language } from '../types';
 import { TRANSLATIONS } from '../data/translations';
+import { publicationGate } from '../data/publicationGate';
 import { X, ArrowRight, ShieldCheck, Thermometer, Wrench, DollarSign } from 'lucide-react';
 
 interface VehicleComparisonModalProps {
@@ -163,7 +164,7 @@ export const VehicleComparisonModal: React.FC<VehicleComparisonModalProps> = ({
               <div className="font-semibold text-[#8ca1b8]">{t.comparison.fobRange}</div>
               {vehicles.map(v => (
                 <div key={v.id} className="font-mono font-bold text-[#e0b555]">
-                  ${v.indicativeFobUsd.min.toLocaleString()} - ${v.indicativeFobUsd.max.toLocaleString()}
+                  {publicationGate.publicPricesAllowed ? `$${v.indicativeFobUsd.min.toLocaleString()} - $${v.indicativeFobUsd.max.toLocaleString()}` : 'Publication blocked'}
                 </div>
               ))}
             </div>
@@ -172,6 +173,7 @@ export const VehicleComparisonModal: React.FC<VehicleComparisonModalProps> = ({
             <div className="grid grid-cols-4 gap-4 py-3 items-center">
               <div className="font-semibold text-[#8ca1b8]">{t.comparison.landedEstimate}</div>
               {vehicles.map(v => {
+                if (!publicationGate.publicPricesAllowed) return <div key={v.id} className="font-semibold text-[#fbbf24]">Blocked by {publicationGate.blockingClaimIds.join(', ')}</div>;
                 const midFob = (v.indicativeFobUsd.min + v.indicativeFobUsd.max) / 2;
                 const landed = (midFob + v.estimatedFreightUsd) * (1 + v.dutyRatePct) * (1 + v.vatRatePct) + v.localPortAndDocUsd;
                 return (
@@ -221,7 +223,7 @@ export const VehicleComparisonModal: React.FC<VehicleComparisonModalProps> = ({
             <div className="grid grid-cols-4 gap-4 py-3 items-center">
               <div className="font-semibold text-[#8ca1b8]">{t.comparison.warranty}</div>
               {vehicles.map(v => (
-                <div key={v.id} className="text-[#9fb1c5]">{v.warrantyYears} yrs / {v.warrantyKm.toLocaleString()} km</div>
+                <div key={v.id} className="text-[#9fb1c5]">Awaiting manufacturer documentation</div>
               ))}
             </div>
 
@@ -252,7 +254,7 @@ export const VehicleComparisonModal: React.FC<VehicleComparisonModalProps> = ({
         {/* Footer */}
         <div className="px-6 py-4 border-t border-[#1b2a3d] bg-[#121c2a] flex items-center justify-between">
           <span className="text-xs text-[#7e91a6]">
-            All comparisons based on manufacturer data & indicative customs tariff. No OEM exclusive relationship claimed.
+            Demonstration candidates only. Specifications, tariffs, prices, warranties and supplier authorization remain unverified.
           </span>
           <button
             onClick={onClose}
