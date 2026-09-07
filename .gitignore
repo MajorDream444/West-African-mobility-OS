@@ -1,0 +1,18 @@
+# Agent working memory - local session context, deliberately not committed
+LLM.md
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Python build artifacts from scripts/build_documents.py
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Office and archive temp files
+~$*

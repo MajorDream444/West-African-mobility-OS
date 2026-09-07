@@ -1,0 +1,21 @@
+track_id,track_name,tier,capital_shape,shared_services,killing_gate,killing_gate_reason,cohort_001_status
+TRK-01,Mobile mechanics,A Service delivery,light,"Tier0,work orders,CRM,parts,credentials",G4,Parts availability at the point of work,OPEN
+TRK-02,Workshop modernization,A Service delivery,light-medium,"Tier0,work orders,credentials,quality metrics,procurement pooling",G2,Workshop owner willingness to pay is asserted not tested,OPEN
+TRK-03,Automotive diagnostics,A Service delivery,medium,"Tier0,work orders,vehicle records,credentials,quality metrics",G3,Diagnostic tooling licensing and software access,CLOSED
+TRK-04,Roadside assistance,A Service delivery,medium,"Tier0,work orders,CRM,fleet uptime",G4,Response-time economics depend on density,CLOSED
+TRK-05,Fleet maintenance contracting,A Service delivery,medium,"Tier0,work orders,fleet uptime,parts,quality metrics",G2,Institutional fleets buy on tender and payment terms,CLOSED
+TRK-06,Spare-parts distribution,B Trade and inspection,medium-heavy,"Tier0,parts,supplier records,procurement pooling,landed cost",G3,Working capital and dead stock SKU mix,CLOSED
+TRK-07,Vehicle inspection and certification,B Trade and inspection,light,"Tier0,vehicle records,credentials,evidence and claims",G2,Who pays buyer seller financier or insurer,OPEN
+TRK-08,Certified used-vehicle commerce,B Trade and inspection,heavy,"Tier0,vehicle records,service history,landed cost,CRM",G3,Minimum importation value not invoice value,CLOSED
+TRK-09,Digital vehicle sales,B Trade and inspection,light,"Tier0,CRM,vehicle records,landed cost,evidence gate",G2,Language gate risk on public pricing claims,CLOSED
+TRK-10,Vehicle delivery and logistics,B Trade and inspection,medium-heavy,"Tier0,work orders,vehicle records",G3,Insurance and liability for vehicles in custody,CLOSED
+TRK-11,Taxi and driver-to-owner fleets,C Asset and mobility,heavy SPV,"Tier0,fleet uptime,work orders,financing records,contribution ledger",G3,Ownership schedule must survive a bad month,CLOSED
+TRK-12,EV charging and battery services,C Asset and mobility,heavy,"Tier0,work orders,credentials,vehicle records",G2,Grid reality and demand timing,CLOSED
+TRK-13,Workshop equipment finance,C Asset and mobility,heavy,"Tier0,financing records,credentials,quality metrics",G3,Constitution 3.10 and regulated activity,CLOSED
+TRK-14,Insurance and claims coordination,C Asset and mobility,light,"Tier0,work orders,vehicle records,evidence and claims",G2,Requires an insurer counterparty who wants it,CLOSED
+TRK-15,Fleet intelligence and telematics,C Asset and mobility,medium,"Tier0,fleet uptime,vehicle records,quality metrics",G3,Continuous personal and location data on drivers,CLOSED
+TRK-16,Technician education,D Capability and nodes,light-medium,"Tier0,training records,credentials,curriculum",G4,External assessment pass rates,OPEN
+TRK-17,Customer support and translation,D Capability and nodes,light,"Tier0,CRM",G2,Who pays; usually an internal service first,OPEN
+TRK-18,Women-led safe mobility,D Capability and nodes,light-heavy,"Tier0,full Tier1,inclusion monitoring",G2,Design for the actual constraint not the label,CLOSED
+TRK-19,Local content and automotive media,D Capability and nodes,light,"Tier0,evidence and claims,language gate",G2,Fastest route to an unsupported public claim,CLOSED
+TRK-20,Country-node development,D Capability and nodes,medium-heavy,"all tiers,country-envoy-onboarding",G1/G2,No node inherits another node authorisation,CLOSED

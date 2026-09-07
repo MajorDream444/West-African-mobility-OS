@@ -61,12 +61,21 @@ Every material statement is classified as:
 
 Public content must trace to approved evidence. Historical statements remain visible when current truth changes.
 
+## The foundry layer
+
+Vehicles are the entry point; the foundry is the system that outlasts them. [MOBILITY-VENTURE-FOUNDRY.md](./MOBILITY-VENTURE-FOUNDRY.md) is the constitution for the founder-development, venture-formation, shared-services, and ownership layer — the technical academy, the venture foundry, the embedded HAMAL operating platform, and the commercial corridor as one system.
+
+Supporting documents live in [docs/foundry](./docs/foundry/): the founder lifecycle (S0-S7), venture stage gates (V0-V5), shared-services architecture, data-rights policy, venture track catalog, ownership and earned equity, the agent workflow, and the Cohort 001 design.
+
+Its governing rule: **the platform creates opportunity and infrastructure; ownership is earned through verified contribution, responsibility, risk, and results.** Nothing in that layer allocates equity, authority, or territory to any person.
+
 ## Start here
 
 1. Read [VISION.md](./VISION.md).
-2. Read [AI-STUDIO-ONE-SHOT-MVP-PROMPT.md](./AI-STUDIO-ONE-SHOT-MVP-PROMPT.md).
-3. Read the canonical package under [Mauritania_Mobility_Intelligence_Canonical_Package](./Mauritania_Mobility_Intelligence_Canonical_Package/).
-4. Treat its `AGENTS.md`, governance registers, supplier EOI, field sprint, market baseline, and product brief as binding source context.
+2. Read [MOBILITY-VENTURE-FOUNDRY.md](./MOBILITY-VENTURE-FOUNDRY.md).
+3. Read [AI-STUDIO-ONE-SHOT-MVP-PROMPT.md](./AI-STUDIO-ONE-SHOT-MVP-PROMPT.md).
+4. Read the canonical package under [Mauritania_Mobility_Intelligence_Canonical_Package](./Mauritania_Mobility_Intelligence_Canonical_Package/).
+5. Treat its `AGENTS.md`, governance registers, supplier EOI, field sprint, market baseline, and product brief as binding source context.
 
 ## Canonical source package
 
@@ -77,5 +86,6 @@ Public content must trace to approved evidence. Historical statements remain vis
 - Portal, dashboard, and CRM brief
 - Country-envoy replication playbook
 - Claims and decision registers
+- Foundry constitution, founder lifecycle, venture gates, data rights, and cohort design
 
 The repository is the canonical layer of truth. Generated applications may operationalize its decisions; they may not silently redefine them.
