@@ -1,0 +1,44 @@
+[
+  {
+    "criterion": 1,
+    "name": "Six evidence classes preserved",
+    "status": "FAIL",
+    "detail": "No schema constrains an evidence class. MobStack ships no claim/evidence schema (claim schema present: False). The classes exist only as prose in CONSTITUTION.md rule 3, in lowercase narrative form, so no artifact can be machine-checked for a valid class and CONFLICT cannot be distinguished from an unlabelled assertion.",
+    "evidence": "CONSTITUTION.md literal tokens found: ['PROPOSAL']"
+  },
+  {
+    "criterion": 2,
+    "name": "No duplicate or redefined claim/decision IDs",
+    "status": "FAIL",
+    "detail": "MobStack cannot enforce this: with no claim or decision schema there is no identifier namespace to check, and JSON Schema alone cannot express cross-document uniqueness. Enforcement must live in a registry validator, which Stage A does not ship.",
+    "evidence": "Corridor registers verified clean independently: 36 claims, 20 decisions, duplicates=none (corridor_clean=True); schema id patterns declared: ['^[a-z0-9][a-z0-9-]*$']"
+  },
+  {
+    "criterion": 3,
+    "name": "Blocks prices, deposits, partnerships, mandates, authority",
+    "status": "FAIL",
+    "detail": "workflow.json requires 5 gates but 5 have no schema-valid definition: ['truth-gate', 'language-gate', 'authority-gate', 'capital-gate', 'ownership-gate']. gates/ contains 0 instance file(s). A gate that is named but undefined blocks nothing.",
+    "evidence": "defined=none invalid=none"
+  },
+  {
+    "criterion": 4,
+    "name": "Synthetic data separated from operating evidence",
+    "status": "FAIL",
+    "detail": "No schema carries a synthetic/operational provenance field. Every artifact \u2014 receipt, handoff, agent, skill \u2014 is representationally identical whether its content came from seeded demonstration data or from real field evidence. This is the failure mode that already occurred once in a prototype build, and the rail cannot currently detect it.",
+    "evidence": "searched all schemas for: synthetic|seeded|demonstration|provenance|isReal|dataSource"
+  },
+  {
+    "criterion": 5,
+    "name": "Named human decisions for PASS/HOLD/REDIRECT/STOP",
+    "status": "PASS-WITH-DEFECT",
+    "detail": "Outcome vocabulary is correctly closed in both gate and receipt schemas, decisionAuthority and decidedBy are required, and receiptRequired is const true. This is the strongest criterion in Stage A. Two soft spots: decidedBy has no minLength so an empty string validates as a named human (empty_accepted=True); and the receipt gate item omits additionalProperties:false, so an unrecognised field such as decidedByAgent is silently accepted (extra_field_accepted=True).",
+    "evidence": "outcomes_const=True authority_required=True decidedBy_required=True outcome_enum_closed=True"
+  },
+  {
+    "criterion": 6,
+    "name": "Source-linked handoffs and receipts",
+    "status": "PASS-WITH-DEFECT",
+    "detail": "Both schemas require sourceCommit, so the link is structurally present. But the constraint is asymmetric: handoff.sourceCommit is pattern-checked as a hex commit ('^[a-f0-9]{7,40}$') while receipt.sourceCommit has no pattern (None). A receipt can therefore name a workload commit that is not a commit at all, which defeats pinning for exactly the artifact that is supposed to be the durable audit record.",
+    "evidence": "handoff_pattern='^[a-f0-9]{7,40}$' receipt_pattern=None receipt_accepts_'not-a-commit'=True"
+  }
+]

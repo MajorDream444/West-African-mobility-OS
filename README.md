@@ -69,6 +69,10 @@ Supporting documents live in [docs/foundry](./docs/foundry/): the founder lifecy
 
 Its governing rule: **the platform creates opportunity and infrastructure; ownership is earned through verified contribution, responsibility, risk, and results.** Nothing in that layer allocates equity, authority, or territory to any person.
 
+## MobStack canary
+
+This repository is MobStack's first canary workload ([issue #3](https://github.com/MajorDream444/West-African-mobility-OS/issues/3)). The validation harness and its findings live in [canary/](./canary/) — run `python3 canary/run_canary.py --mobstack <path>` to reproduce. Mobility claims are never copied into MobStack; only demonstrated reusable patterns are proposed upstream to HAMAL.
+
 ## Start here
 
 1. Read [VISION.md](./VISION.md).
