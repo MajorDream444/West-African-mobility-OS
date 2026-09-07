@@ -2,7 +2,7 @@
 
 **Status:** `PROPOSAL`
 **Parent:** [`MOBILITY-VENTURE-FOUNDRY.md`](../../MOBILITY-VENTURE-FOUNDRY.md) §8
-**Interfaces:** HAMAL_MOB_PLAYBOOKS (doctrine) · MobStack (rails) · Major-AI-OS (system core) · this repository (corridor truth)
+**Interfaces:** Major-AI-OS / MAIM (human doctrine) · HAMAL_MOB_PLAYBOOKS (operating doctrine) · MobStack (execution engine) · this repository (first industry implementation)
 
 ---
 
@@ -12,9 +12,22 @@ The G-Stack pattern is useful for one specific reason: it treats AI as an **opin
 
 That operating pattern is what we adapt. Its software is not.
 
-What we build instead is ours: MobStack rails, HAMAL doctrine, corridor evidence discipline, and the Major AI Mindset layer. Influenced by others; built on our own technology, guidance, and agents.
+What we build instead is ours, and it is assembled from four **separate** layers that must not be spoken of as one:
 
-**The Major AI Mindset contribution is the decisive one.** A skill is a documented method. A playbook decides *why, when, with what tools, in what order, for what outcome, and how quality is judged*. G-Stack gives us a stage sequence. HAMAL gives us the doctrine that makes each stage produce business value rather than output. Without that layer, a foundry agent workflow is a very well-organised way to generate documents nobody uses.
+| Layer | Develops | Home |
+|---|---|---|
+| **MAIM** | The person — confidence, context, direction, experimentation, AI literacy, builder mindset | Major-AI-OS |
+| **HAMAL** | The operating system — context, agents, skills, tools, playbooks, rubrics, MOBS | HAMAL_MOB_PLAYBOOKS |
+| **MobStack** | Execution — runs the approved HAMAL workflows, applies gates, emits receipts | Mobstack |
+| **Industry OS** | Application — this corridor's evidence, decisions, claims, counterparties, pilots | this repository |
+
+There is no combined "HAMAL Major AI Mindset layer." MAIM and HAMAL are coordinated and distinct: **MAIM develops the builder; HAMAL encodes the operating wisdom; MobStack executes the method; the Industry OS proves it in the real world.** That distinction should read identically in all four repositories.
+
+Why the doctrine layer is decisive: a skill is a documented method, while a playbook decides *why, when, with what tools, in what order, for what outcome, and how quality is judged*. G-Stack contributes a stage sequence. HAMAL contributes the doctrine that makes each stage produce business value rather than output. Without it, a foundry agent workflow is a very well-organised way to generate documents nobody uses.
+
+**MobStack is built as an original system, not a fork.** Architectural patterns are borrowed with clear attribution; the constitution, lifecycle, commands, schemas, and operating philosophy are native to MAIM and HAMAL. A wholesale fork would import software-shipping assumptions that do not fit venture formation, carry someone else's vocabulary, create upstream maintenance pressure, and leave MobStack permanently reading as "modified G-Stack."
+
+G-Stack helps teams ship software. **MobStack helps people build defensible ventures and acquire the capacity to own them.** That is the departure.
 
 ---
 
@@ -105,16 +118,35 @@ Mapping the foundry's work onto the twelve MOBS in the MobStack doctrine, so no 
 
 Four repositories, four distinct jobs. Keeping them distinct is what prevents doctrine drift.
 
-| Repository | Owns | Must not own |
+| Repository | Canonical responsibility | Must not become |
 |---|---|---|
-| **West-African-mobility-OS** (this repo) | Corridor truth: constitution, claims, evidence, gates, cohort design, country nodes | Generic agent runtime |
-| **HAMAL_MOB_PLAYBOOKS** | Doctrine: playbooks, SOPs, rubrics, Mob operating models, agent context rules, the Major AI Mindset layer | Corridor-specific claims |
-| **Mobstack** | Rails: agent schemas, repo ingestion, orchestration, sub-agent spawning, memory sync, test harnesses | Doctrine or corridor facts |
-| **Major-AI-OS** | System core: stack definition, operating law, execution loop, cross-system translation | Industry-specific operating detail |
+| **Major-AI-OS** | MAIM worldview, founder mindset, education, communication, brand, human-development doctrine | A mobility operations database |
+| **HAMAL_MOB_PLAYBOOKS** | Reusable context, playbooks, SOPs, MOBS, industry systems, rubrics, audits, agent doctrine | A live application runtime |
+| **Mobstack** | Installable agent execution engine: loads context, runs skills, applies gates, produces evidence-backed artifacts | A duplicate playbook library |
+| **West-African-mobility-OS** (this repo) | First industry implementation: mobility evidence, decisions, claims, counterparties, pilots, registries, application code | The universal HAMAL framework |
 
-**Direction of authority:** corridor truth → doctrine → rails. A rail may not silently redefine a doctrine; a doctrine may not silently redefine corridor truth. Where they conflict, `AGENTS.md` and `SOURCE-OF-TRUTH.md` in this repository win, and the conflict is recorded rather than resolved by whoever edited last.
+### Direction of authority and direction of learning
 
-**Porting note:** the foundry stage map and agent roster above are written to be lifted into Mobstack as an execution pattern, and the doctrine layer into HAMAL_MOB_PLAYBOOKS as a playbook. This session has read-only access to both repositories, so neither has been modified. Attaching them with push access is required before that port can be committed.
+These are **two different directions**, and conflating them was an error in the first draft of this document.
+
+```mermaid
+flowchart TD
+    A["Major-AI-OS<br/>Human doctrine"] --> C["MobStack<br/>Execution engine"]
+    B["HAMAL MOB PLAYBOOKS<br/>Operating doctrine"] --> C
+    C --> D["West African Mobility OS<br/>First implementation"]
+    D --> E["Field evidence and lessons"]
+    E -->|"Reviewed pull requests"| B
+```
+
+- **Authority and policy flow downward.** MAIM and HAMAL doctrine bind MobStack; MobStack binds the Industry OS.
+- **Field evidence and lessons flow upward**, and only as *proposals*, through a reviewed pull request.
+- **Field experience cannot automatically modify universal doctrine.** One experimental corridor decision must never silently become a universal rule binding every future industry.
+- **MobStack executes rules; it does not originate the founder philosophy.**
+- **The Mobility OS owns mobility facts; it does not redefine HAMAL.**
+
+**Precedence when documents conflict:** for mobility-specific facts, claims, counterparties, and corridor decisions, this repository's `AGENTS.md` and `SOURCE-OF-TRUTH.md` are authoritative. For universal doctrine — founder philosophy, playbook structure, agent doctrine, rubric standards — HAMAL is authoritative and this repository conforms. A conflict is recorded and escalated upward, never resolved by whoever edited last.
+
+**Porting note:** the foundry stage map and agent roster above are written to be lifted into MobStack as an execution *pattern*, and the generalisable doctrine into HAMAL_MOB_PLAYBOOKS as a *proposal* — see [`UPSTREAM-CANDIDATES.md`](./UPSTREAM-CANDIDATES.md) for what qualifies and when. Neither may be copied upstream word-for-word before the corridor proves which parts are genuinely universal. This session has read-only access to both repositories, so neither has been modified.
 
 ---
 
@@ -127,7 +159,10 @@ The same unified model runs across Claude Cowork, Claude Code, Codex, Google AI 
 | **Claude Cowork** | Operator surface — cohort management, gate packs, briefings, founder interrogation |
 | **Claude Code** | Repository surface — canonical documents, registers, evidence discipline, platform code |
 | **Codex** | Implementation surface — hardening prototypes into production platform services |
-| **Google AI Studio** | Prototype surface — one-shot MVP and demonstration builds |
+| **Google AI Studio** | Prototype surface — one-shot MVP and demonstration builds. **Not automatic canonical authority:** its output passes a truth gate before entering canonical code |
+| **Claude Design** | Experience design, brand expression, interfaces, diagrams, presentation systems |
+| **NotebookLM** | Source-grounded critique, briefings, second-brain analysis |
+| **MobStack** | Cross-agent execution, handoffs, gates, receipts, and workflow enforcement |
 | **HAMAL skills** | Enforcement surface — gates, clerks, auditors running continuously across all of the above |
 
 **One rule holds across all five:** no execution without context. Every surface reads this repository's constitution, `AGENTS.md`, and `SOURCE-OF-TRUTH.md` before acting. An agent without context is a chatbot; an agent with context, playbooks, tools, and rubrics is a digital employee.
@@ -136,7 +171,7 @@ The same unified model runs across Claude Cowork, Claude Code, Codex, Google AI 
 
 ## Every run leaves a trace
 
-Adopted directly from the Major AI Mindset doctrine — every meaningful run must leave behind:
+Adopted from HAMAL operating doctrine — every meaningful run must leave behind:
 
 - a commit
 - a changelog note

@@ -1,5 +1,8 @@
 # Foundry layer
 
+**Status:** `PROPOSAL`
+**Layer:** Industry OS — first industry implementation. Owns mobility facts; does not redefine HAMAL doctrine.
+
 The founder-development, venture-formation, shared-services, and ownership layer of the West African Mobility OS.
 
 **Start with the constitution:** [`MOBILITY-VENTURE-FOUNDRY.md`](../../MOBILITY-VENTURE-FOUNDRY.md)
@@ -13,7 +16,8 @@ The founder-development, venture-formation, shared-services, and ownership layer
 | [`FIRST-COHORT-DESIGN.md`](./FIRST-COHORT-DESIGN.md) | What exactly happens in Cohort 001? |
 | [`VENTURE-TRACK-CATALOG.md`](./VENTURE-TRACK-CATALOG.md) | Which businesses can the foundry produce? |
 | [`OWNERSHIP-AND-EARNED-EQUITY.md`](./OWNERSHIP-AND-EARNED-EQUITY.md) | How is ownership measured, vested, and lost? |
-| [`FOUNDRY-AGENT-WORKFLOW.md`](./FOUNDRY-AGENT-WORKFLOW.md) | How do the agents actually run this? |
+| [`FOUNDRY-AGENT-WORKFLOW.md`](./FOUNDRY-AGENT-WORKFLOW.md) | How do the agents actually run this, and how do the four repositories relate? |
+| [`UPSTREAM-CANDIDATES.md`](./UPSTREAM-CANDIDATES.md) | What should later be proposed upstream to HAMAL, and what must not? |
 
 ## Machine-readable
 

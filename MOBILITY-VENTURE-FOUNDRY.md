@@ -144,7 +144,16 @@ Ledger schema, vesting logic, dilution rules, exit and forfeiture terms, and the
 
 The foundry runs an opinionated agent workflow rather than an open chat. A founder entering the foundry does not begin with an empty prompt; they enter a structured process with specialist agents, templates, tests, operating standards, and real corridor data.
 
-`Think → Plan → Build → Review → Test → Ship → Reflect`, with each stage producing artifacts the next stage consumes, adapted from the G-Stack pattern and expressed through MobStack rails, HAMAL doctrine, and the Major AI Mindset layer. This is our own system — influenced by others, embedding our technology, guidance, and agents.
+`Think → Plan → Build → Review → Test → Ship → Reflect`, with each stage producing artifacts the next stage consumes — adapted from the G-Stack pattern, executed by MobStack, governed by HAMAL doctrine. This is our own system: influenced by others, built on our own technology, guidance, and agents.
+
+Four layers, coordinated and distinct — the same words in all four repositories:
+
+- **MAIM** develops the person: confidence, context, direction, experimentation, AI literacy, builder mindset.
+- **HAMAL** develops and coordinates the operating system: context, agents, skills, tools, playbooks, rubrics, MOBS.
+- **MobStack** runs the approved HAMAL workflows, applies the gates, and emits receipts.
+- **This Industry OS** applies them to the automotive corridor and owns mobility facts.
+
+Authority flows downward. Field evidence flows upward as reviewed proposals only. This repository never silently redefines universal doctrine.
 
 Role mapping, artifact contracts, MOB assignment, and the Claude Cowork / Claude Code / Codex / AI Studio interface: [`FOUNDRY-AGENT-WORKFLOW.md`](./docs/foundry/FOUNDRY-AGENT-WORKFLOW.md).
 

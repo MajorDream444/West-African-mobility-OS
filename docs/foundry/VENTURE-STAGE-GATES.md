@@ -151,6 +151,46 @@ A V5 venture may be returned to V4 by governance decision if metrics or governan
 
 ---
 
+## Hard refusal conditions
+
+These are not review considerations. They are **automatic refusals** at every gate, and the execution layer must block or escalate rather than proceed. A gate panel cannot vote past one; only the removal of the underlying condition clears it.
+
+A venture, artifact, or public surface is refused when:
+
+1. A **public price** is generated without a completed landed-cost record traceable to approved evidence.
+2. A **deposit** is requested without approved legal entity, escrow, refund policy, and payment custody.
+3. A **supplier is treated as an OEM** without authority evidence on file.
+4. A **commercial entity and the Marine Foundation** are presented as the same organization.
+5. **Website interest** is described as an order or as proven demand.
+6. **Synthetic buyers, mechanics, suppliers, or workshops** appear as real operational records.
+7. **EV deployment** is proposed without power, charging, maintenance, battery, and recovery evidence.
+8. **Used vehicles** are assumed simpler without validating customs valuation and warranty exposure.
+9. **Diaspora participation** is called "micro-investment" without securities and financial-services review.
+10. **Local ownership** is promised without defined equity, vesting, governance, data rights, and risk contribution.
+
+Condition 6 deserves emphasis: seeded demonstration data is legitimate in a prototype and is a falsified record the moment it is presented as operational. That failure mode has already occurred once in a prototype build, which is precisely why it is enumerated here as a blocking condition rather than a caution.
+
+---
+
+## The anti-extraction test
+
+Every venture gate runs these ten questions. They are the operational form of constitution §3.9 — an input that deepens dependency is a cost, not an accelerant.
+
+1. Who owns the customer relationship?
+2. Who owns the operating data?
+3. Where does the margin remain?
+4. Who holds the assets?
+5. What expertise is transferred?
+6. Can local teams operate without foreign support?
+7. What leadership pathway exists?
+8. What commercial participation is actually earned?
+9. Who absorbs failure and financial risk?
+10. What institution remains after the external partner leaves?
+
+An answer of "unresolved" is acceptable at V1 and is a **Hold** at V3. Question 10 has no acceptable answer of "none" at any stage — a venture that leaves no institution behind is a transaction wearing a programme's clothing.
+
+---
+
 ## Panel composition
 
 | Gate | Panel |
