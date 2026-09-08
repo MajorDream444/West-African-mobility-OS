@@ -71,7 +71,7 @@ Durations are `ASSUMPTION` — planning figures for cohort design, not entitleme
 
 **Exit evidence to advance:** credential record with assessor identities and dates; safety clearance; HAMAL workspace competence demonstrated on live work-order entry.
 
-**Portability:** the credential belongs to the participant and is exportable on request, permanently, including after they leave (`DATA-RIGHTS-POLICY.md` §4).
+**Portability:** the participant holds rights of access, correction, consent, and portability over their credential and assessment record, permanently, including after they leave — subject to applicable law and to legitimate safety, warranty, employment, and audit obligations (constitution §3.2, `DATA-RIGHTS-POLICY.md` §4). Servicing a venture's customer does not transfer that customer relationship to the participant; customer records are governed by §3.3.
 
 **Failure mode this stage prevents:** certificate inflation — the single fastest way to destroy the corridor's credibility with an OEM, an institutional fleet, or an insurer.
 

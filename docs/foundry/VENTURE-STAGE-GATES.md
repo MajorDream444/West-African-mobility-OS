@@ -142,7 +142,7 @@ This is the **canary** stage: a bounded, reversible test in one geography, one f
 **Ongoing obligations:**
 - Quarterly performance and governance review against the same metric set
 - Contribution ledger maintained and reconciled (`OWNERSHIP-AND-EARNED-EQUITY.md`)
-- Anti-extraction scorecard contribution, published unconditionally
+- Anti-extraction scorecard contribution, published with the same discipline and cadence as successes, subject only to the privacy, safety, legal, security, and legitimate commercial-confidentiality controls in constitution §3.7 — which may protect people and sensitive records, and may not be used to conceal programme performance
 - Standards compliance and participation in the quality-assurance regime
 - Successor development duty (`FOUNDER-LIFECYCLE.md` S7)
 - Data-rights compliance audit

@@ -45,7 +45,7 @@ Cohort 001 does not open until:
 
 | Parameter | Cohort 001 | Rationale |
 |---|---|---|
-| Location | Nouakchott (primary), Dakar (parallel track if the Senegal hub is documented) | Mauritania is the founder-development node; Senegal the training and service accelerator |
+| Location | Nouakchott (primary). Dakar only after `DEC-016` investigation evidence is recorded | Mauritania is the founder-development node. Senegal is a **proposed** training, service, parts, and quality-assurance accelerator; no accelerator status or taxi demonstration is treated as approved before that evidence exists (constitution §9) |
 | Size | 20–30 participants | Small enough to assess honestly, large enough to see pattern |
 | Duration | S0–S3 across approximately 12 months | `ASSUMPTION` — the real figure is an output of this cohort |
 | Tracks opened | 1 (mobile mechanics), 2 (workshop modernization), 7 (vehicle inspection), 16 (technician education), 17 (support and translation) | Light capital, testable killing gates, Wave 1–2 services |
@@ -113,7 +113,7 @@ Signals collected from participants throughout — a person doing the work sees 
 | Drop-out reasons, recorded honestly | Where the design fails people |
 | Cost per participant to each stage | Whether the model can be replicated |
 
-All of it publishes, including the bad numbers. See constitution §3.7.
+All of it is reported with the same discipline and cadence as any success, including the bad numbers. Aggregate results publish subject to the privacy, safety, legal, security, and confidentiality controls in constitution §3.7; those controls protect people, and may not be used to conceal programme performance.
 
 ---
 

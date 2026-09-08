@@ -14,5 +14,9 @@ __pycache__/
 .venv/
 venv/
 
+# Node dependencies and build output (MVP application)
+node_modules/
+dist/
+
 # Office and archive temp files
 ~$*
