@@ -2,22 +2,30 @@ import React, { useState } from 'react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../data/translations';
 import { CANDIDATE_VEHICLES } from '../data/canonicalData';
-import { publicationGate } from '../data/publicationGate';
+import { economicOutputGate, type EconomicOutputGate } from '../data/publicationGate';
 import { Calculator, DollarSign, ArrowRight, Info, AlertTriangle, ShieldCheck, RefreshCw } from 'lucide-react';
 
 interface LandedCostCalculatorProps {
   currentLanguage: Language;
+  landedCostGate?: EconomicOutputGate;
+  retailPriceGate?: EconomicOutputGate;
+  savingsGate?: EconomicOutputGate;
 }
 
-export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ currentLanguage }) => {
+export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({
+  currentLanguage,
+  landedCostGate = economicOutputGate('calculator_landed_cost'),
+  retailPriceGate = economicOutputGate('calculator_retail_price'),
+  savingsGate = economicOutputGate('comparative_savings')
+}) => {
   const t = TRANSLATIONS[currentLanguage];
 
-  if (!publicationGate.publicPricesAllowed) {
+  if (!landedCostGate.allowed) {
     return (
       <section className="rounded-2xl border border-amber-500/40 bg-[#101925] p-8">
         <h2 className="text-xl font-bold text-amber-300">Landed-cost publication blocked</h2>
-        <p className="mt-3 text-sm text-[#9fb1c5]">{publicationGate.reason}</p>
-        <p className="mt-2 text-xs text-[#7e91a6]">Resolve {publicationGate.blockingClaimIds.join(', ')} through the canonical evidence process before displaying or calculating public prices.</p>
+        <p className="mt-3 text-sm text-[#9fb1c5]">{landedCostGate.reason}</p>
+        <p className="mt-2 text-xs text-[#7e91a6]">Resolve {landedCostGate.blockingClaimIds.join(', ')} through the canonical evidence process before displaying or calculating public prices.</p>
       </section>
     );
   }
@@ -212,7 +220,7 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
           </div>
 
           {/* Retail Margin & Benchmark Slider */}
-          <div className="bg-[#121c2a] border border-[#1c2c3e] rounded-xl p-3.5">
+          {retailPriceGate.allowed ? <div className="bg-[#121c2a] border border-[#1c2c3e] rounded-xl p-3.5">
             <div className="flex justify-between items-center text-xs mb-1">
               <label className="font-semibold text-[#cad6e3]">Distributor Margin Markup</label>
               <span className="font-mono font-bold text-[#34d399]">{targetMargin}%</span>
@@ -226,7 +234,7 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
               onChange={(e) => setTargetMargin(Number(e.target.value))}
               className="w-full accent-[#34d399] h-1.5 bg-[#1a2838] rounded-lg cursor-pointer"
             />
-          </div>
+          </div> : <div className="rounded-xl border border-amber-500/40 bg-[#121c2a] p-3.5 text-xs font-semibold text-amber-300">Margin input blocked pending verified evidence.</div>}
         </div>
 
         {/* Right Column: Waterfall & Final Landed Breakdown */}
@@ -285,8 +293,8 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
                   {t.calculator.suggestedRetail} ({targetMargin}% Margin)
                 </span>
                 <div className="text-right">
-                  <span className="text-xl font-black text-white">
-                    ${Math.round(suggestedRetailUsd).toLocaleString()} USD
+                  <span className={retailPriceGate.allowed ? 'text-xl font-black text-white' : 'text-sm font-bold text-amber-300'}>
+                    {retailPriceGate.allowed ? `$${Math.round(suggestedRetailUsd).toLocaleString()} USD` : 'Publication blocked'}
                   </span>
                 </div>
               </div>
@@ -294,7 +302,9 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
               {/* Benchmark comparison is not published without verified evidence. */}
               <div className="pt-2 border-t border-[#20344d] flex items-center justify-between text-xs">
                 <span className="text-[#8fa4bb]">Comparative savings claim:</span>
-                <span className="font-bold text-amber-300">Awaiting verified market evidence</span>
+                <span className={savingsGate.allowed ? 'font-bold text-emerald-300' : 'font-bold text-amber-300'}>
+                  {savingsGate.allowed ? 'Evidence dependencies verified' : 'Awaiting verified market evidence'}
+                </span>
               </div>
             </div>
           </div>

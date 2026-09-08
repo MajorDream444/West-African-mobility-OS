@@ -541,6 +541,156 @@ export const CANONICAL_CLAIMS: readonly Claim[] = [
     "validation_owner": "Major",
     "next_action": "Supersedes the v1.0 statement that age-limit removal strengthens the certified-used lane",
     "last_reviewed": "2026-09-06"
+  },
+  {
+    "claim_id": "CLM-037",
+    "statement": "Current supplier vehicle price or approved quotation for a named candidate model",
+    "classification": "OPEN",
+    "source": "Economic dependency register",
+    "source_date": "2026-09-08",
+    "source_owner": "Program team",
+    "geography": "Mauritania",
+    "lane": "Automotive",
+    "confidence": "low",
+    "status": "open",
+    "validation_owner": "Brother Ling",
+    "next_action": "Obtain a dated supplier quotation with model trim currency Incoterm and validity",
+    "last_reviewed": "2026-09-08"
+  },
+  {
+    "claim_id": "CLM-038",
+    "statement": "Current ocean freight cost from the named export port to Nouakchott",
+    "classification": "OPEN",
+    "source": "Economic dependency register",
+    "source_date": "2026-09-08",
+    "source_owner": "Program team",
+    "geography": "Mauritania",
+    "lane": "Automotive",
+    "confidence": "low",
+    "status": "open",
+    "validation_owner": "Brother Ling",
+    "next_action": "Obtain a dated freight quotation for the exact route and shipment basis",
+    "last_reviewed": "2026-09-08"
+  },
+  {
+    "claim_id": "CLM-039",
+    "statement": "Current marine insurance rate and coverage for the proposed shipment",
+    "classification": "OPEN",
+    "source": "Economic dependency register",
+    "source_date": "2026-09-08",
+    "source_owner": "Program team",
+    "geography": "Mauritania",
+    "lane": "Automotive",
+    "confidence": "low",
+    "status": "open",
+    "validation_owner": "Brother Ling",
+    "next_action": "Obtain a dated insurance quotation and coverage terms",
+    "last_reviewed": "2026-09-08"
+  },
+  {
+    "claim_id": "CLM-040",
+    "statement": "Current port handling brokerage and clearance charges at Nouakchott",
+    "classification": "OPEN",
+    "source": "Economic dependency register",
+    "source_date": "2026-09-08",
+    "source_owner": "Program team",
+    "geography": "Mauritania",
+    "lane": "Automotive",
+    "confidence": "low",
+    "status": "open",
+    "validation_owner": "Diallo",
+    "next_action": "Obtain itemised written charges from the port and licensed customs broker",
+    "last_reviewed": "2026-09-08"
+  },
+  {
+    "claim_id": "CLM-041",
+    "statement": "Current inland transport cost from port to delivery location",
+    "classification": "OPEN",
+    "source": "Economic dependency register",
+    "source_date": "2026-09-08",
+    "source_owner": "Program team",
+    "geography": "Mauritania",
+    "lane": "Automotive",
+    "confidence": "low",
+    "status": "open",
+    "validation_owner": "Diallo",
+    "next_action": "Obtain a dated route-specific carrier quotation",
+    "last_reviewed": "2026-09-08"
+  },
+  {
+    "claim_id": "CLM-042",
+    "statement": "Current pre-delivery inspection scope and cost",
+    "classification": "OPEN",
+    "source": "Economic dependency register",
+    "source_date": "2026-09-08",
+    "source_owner": "Program team",
+    "geography": "Mauritania",
+    "lane": "Automotive",
+    "confidence": "low",
+    "status": "open",
+    "validation_owner": "Diallo",
+    "next_action": "Define the inspection scope and obtain a qualified provider quotation",
+    "last_reviewed": "2026-09-08"
+  },
+  {
+    "claim_id": "CLM-043",
+    "statement": "Approved contingency methodology for the landed-cost calculation",
+    "classification": "OPEN",
+    "source": "Economic dependency register",
+    "source_date": "2026-09-08",
+    "source_owner": "Program team",
+    "geography": "Mauritania",
+    "lane": "Automotive",
+    "confidence": "low",
+    "status": "open",
+    "validation_owner": "Program team",
+    "next_action": "Document and approve a non-duplicative contingency basis",
+    "last_reviewed": "2026-09-08"
+  },
+  {
+    "claim_id": "CLM-044",
+    "statement": "Approved commercial margin for any suggested retail price",
+    "classification": "OPEN",
+    "source": "Economic dependency register",
+    "source_date": "2026-09-08",
+    "source_owner": "Program team",
+    "geography": "Mauritania",
+    "lane": "Automotive",
+    "confidence": "low",
+    "status": "open",
+    "validation_owner": "Major",
+    "next_action": "Approve a margin only after entity tax warranty service and loss allocation are evidenced",
+    "last_reviewed": "2026-09-08"
+  },
+  {
+    "claim_id": "CLM-045",
+    "statement": "Current comparable market-price benchmark supporting any savings claim",
+    "classification": "OPEN",
+    "source": "Economic dependency register",
+    "source_date": "2026-09-08",
+    "source_owner": "Program team",
+    "geography": "Mauritania",
+    "lane": "Automotive",
+    "confidence": "low",
+    "status": "open",
+    "validation_owner": "Diallo",
+    "next_action": "Collect dated like-for-like market observations with provenance",
+    "last_reviewed": "2026-09-08"
+  },
+  {
+    "claim_id": "CLM-046",
+    "statement": "Current official USD to MRU conversion rate applicable to the transaction date",
+    "classification": "OPEN",
+    "source": "Economic dependency register",
+    "source_date": "2026-09-08",
+    "source_owner": "Program team",
+    "geography": "Mauritania",
+    "lane": "Automotive",
+    "confidence": "low",
+    "status": "open",
+    "validation_owner": "Program team",
+    "next_action": "Record a dated official rate before displaying any currency conversion",
+    "last_reviewed": "2026-09-08"
   }
 ];
 
@@ -712,12 +862,798 @@ export const HISTORICAL_CANONICAL_CLAIMS: readonly Claim[] = [
   }
 ];
 
+export const ECONOMIC_OUTPUT_GATES = {
+  "catalog_vehicle_price": {
+    "outputId": "catalog_vehicle_price",
+    "outputLabel": "Vehicle catalog price",
+    "allowed": false,
+    "publicationBlocked": true,
+    "dependencies": [
+      {
+        "output_id": "catalog_vehicle_price",
+        "output_label": "Vehicle catalog price",
+        "input_id": "vehicle_price",
+        "input_label": "Supplier vehicle price",
+        "claim_ids": [
+          "CLM-037"
+        ]
+      }
+    ],
+    "blockingClaimIds": [
+      "CLM-037"
+    ],
+    "unknownClaimIds": [],
+    "undeclaredInputIds": [],
+    "reason": "Publication blocked for Vehicle catalog price: every economic input must reference known, verified canonical claims."
+  },
+  "dashboard_vehicle_price": {
+    "outputId": "dashboard_vehicle_price",
+    "outputLabel": "Dashboard vehicle price",
+    "allowed": false,
+    "publicationBlocked": true,
+    "dependencies": [
+      {
+        "output_id": "dashboard_vehicle_price",
+        "output_label": "Dashboard vehicle price",
+        "input_id": "vehicle_price",
+        "input_label": "Supplier vehicle price",
+        "claim_ids": [
+          "CLM-037"
+        ]
+      }
+    ],
+    "blockingClaimIds": [
+      "CLM-037"
+    ],
+    "unknownClaimIds": [],
+    "undeclaredInputIds": [],
+    "reason": "Publication blocked for Dashboard vehicle price: every economic input must reference known, verified canonical claims."
+  },
+  "comparison_vehicle_price": {
+    "outputId": "comparison_vehicle_price",
+    "outputLabel": "Vehicle comparison price",
+    "allowed": false,
+    "publicationBlocked": true,
+    "dependencies": [
+      {
+        "output_id": "comparison_vehicle_price",
+        "output_label": "Vehicle comparison price",
+        "input_id": "vehicle_price",
+        "input_label": "Supplier vehicle price",
+        "claim_ids": [
+          "CLM-037"
+        ]
+      }
+    ],
+    "blockingClaimIds": [
+      "CLM-037"
+    ],
+    "unknownClaimIds": [],
+    "undeclaredInputIds": [],
+    "reason": "Publication blocked for Vehicle comparison price: every economic input must reference known, verified canonical claims."
+  },
+  "dashboard_landed_cost": {
+    "outputId": "dashboard_landed_cost",
+    "outputLabel": "Dashboard landed cost",
+    "allowed": false,
+    "publicationBlocked": true,
+    "dependencies": [
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "vehicle_price",
+        "input_label": "Supplier vehicle price",
+        "claim_ids": [
+          "CLM-037"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "freight",
+        "input_label": "Ocean freight",
+        "claim_ids": [
+          "CLM-038"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "insurance",
+        "input_label": "Marine insurance",
+        "claim_ids": [
+          "CLM-039"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "customs_duty",
+        "input_label": "Customs duty",
+        "claim_ids": [
+          "CLM-011"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "statistical_fee",
+        "input_label": "Statistical fee",
+        "claim_ids": [
+          "CLM-012"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "minimum_flat_rate_tax",
+        "input_label": "Minimum flat-rate tax",
+        "claim_ids": [
+          "CLM-013"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "used_vehicle_valuation",
+        "input_label": "Used-vehicle customs valuation",
+        "claim_ids": [
+          "CLM-014"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "port_handling",
+        "input_label": "Port handling and clearance",
+        "claim_ids": [
+          "CLM-040"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "inland_transport",
+        "input_label": "Inland transport",
+        "claim_ids": [
+          "CLM-041"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "inspection",
+        "input_label": "Pre-delivery inspection",
+        "claim_ids": [
+          "CLM-042"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "contingency",
+        "input_label": "Contingency methodology",
+        "claim_ids": [
+          "CLM-043"
+        ]
+      },
+      {
+        "output_id": "dashboard_landed_cost",
+        "output_label": "Dashboard landed cost",
+        "input_id": "vat",
+        "input_label": "Value-added tax",
+        "claim_ids": [
+          "CLM-010"
+        ]
+      }
+    ],
+    "blockingClaimIds": [
+      "CLM-037",
+      "CLM-038",
+      "CLM-039",
+      "CLM-012",
+      "CLM-013",
+      "CLM-040",
+      "CLM-041",
+      "CLM-042",
+      "CLM-043"
+    ],
+    "unknownClaimIds": [],
+    "undeclaredInputIds": [],
+    "reason": "Publication blocked for Dashboard landed cost: every economic input must reference known, verified canonical claims."
+  },
+  "comparison_landed_cost": {
+    "outputId": "comparison_landed_cost",
+    "outputLabel": "Vehicle comparison landed cost",
+    "allowed": false,
+    "publicationBlocked": true,
+    "dependencies": [
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "vehicle_price",
+        "input_label": "Supplier vehicle price",
+        "claim_ids": [
+          "CLM-037"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "freight",
+        "input_label": "Ocean freight",
+        "claim_ids": [
+          "CLM-038"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "insurance",
+        "input_label": "Marine insurance",
+        "claim_ids": [
+          "CLM-039"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "customs_duty",
+        "input_label": "Customs duty",
+        "claim_ids": [
+          "CLM-011"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "statistical_fee",
+        "input_label": "Statistical fee",
+        "claim_ids": [
+          "CLM-012"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "minimum_flat_rate_tax",
+        "input_label": "Minimum flat-rate tax",
+        "claim_ids": [
+          "CLM-013"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "used_vehicle_valuation",
+        "input_label": "Used-vehicle customs valuation",
+        "claim_ids": [
+          "CLM-014"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "port_handling",
+        "input_label": "Port handling and clearance",
+        "claim_ids": [
+          "CLM-040"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "inland_transport",
+        "input_label": "Inland transport",
+        "claim_ids": [
+          "CLM-041"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "inspection",
+        "input_label": "Pre-delivery inspection",
+        "claim_ids": [
+          "CLM-042"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "contingency",
+        "input_label": "Contingency methodology",
+        "claim_ids": [
+          "CLM-043"
+        ]
+      },
+      {
+        "output_id": "comparison_landed_cost",
+        "output_label": "Vehicle comparison landed cost",
+        "input_id": "vat",
+        "input_label": "Value-added tax",
+        "claim_ids": [
+          "CLM-010"
+        ]
+      }
+    ],
+    "blockingClaimIds": [
+      "CLM-037",
+      "CLM-038",
+      "CLM-039",
+      "CLM-012",
+      "CLM-013",
+      "CLM-040",
+      "CLM-041",
+      "CLM-042",
+      "CLM-043"
+    ],
+    "unknownClaimIds": [],
+    "undeclaredInputIds": [],
+    "reason": "Publication blocked for Vehicle comparison landed cost: every economic input must reference known, verified canonical claims."
+  },
+  "calculator_landed_cost": {
+    "outputId": "calculator_landed_cost",
+    "outputLabel": "Landed-cost calculator output",
+    "allowed": false,
+    "publicationBlocked": true,
+    "dependencies": [
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "vehicle_price",
+        "input_label": "Supplier vehicle price",
+        "claim_ids": [
+          "CLM-037"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "freight",
+        "input_label": "Ocean freight",
+        "claim_ids": [
+          "CLM-038"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "insurance",
+        "input_label": "Marine insurance",
+        "claim_ids": [
+          "CLM-039"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "customs_duty",
+        "input_label": "Customs duty",
+        "claim_ids": [
+          "CLM-011"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "statistical_fee",
+        "input_label": "Statistical fee",
+        "claim_ids": [
+          "CLM-012"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "minimum_flat_rate_tax",
+        "input_label": "Minimum flat-rate tax",
+        "claim_ids": [
+          "CLM-013"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "used_vehicle_valuation",
+        "input_label": "Used-vehicle customs valuation",
+        "claim_ids": [
+          "CLM-014"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "port_handling",
+        "input_label": "Port handling and clearance",
+        "claim_ids": [
+          "CLM-040"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "inland_transport",
+        "input_label": "Inland transport",
+        "claim_ids": [
+          "CLM-041"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "inspection",
+        "input_label": "Pre-delivery inspection",
+        "claim_ids": [
+          "CLM-042"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "contingency",
+        "input_label": "Contingency methodology",
+        "claim_ids": [
+          "CLM-043"
+        ]
+      },
+      {
+        "output_id": "calculator_landed_cost",
+        "output_label": "Landed-cost calculator output",
+        "input_id": "vat",
+        "input_label": "Value-added tax",
+        "claim_ids": [
+          "CLM-010"
+        ]
+      }
+    ],
+    "blockingClaimIds": [
+      "CLM-037",
+      "CLM-038",
+      "CLM-039",
+      "CLM-012",
+      "CLM-013",
+      "CLM-040",
+      "CLM-041",
+      "CLM-042",
+      "CLM-043"
+    ],
+    "unknownClaimIds": [],
+    "undeclaredInputIds": [],
+    "reason": "Publication blocked for Landed-cost calculator output: every economic input must reference known, verified canonical claims."
+  },
+  "calculator_retail_price": {
+    "outputId": "calculator_retail_price",
+    "outputLabel": "Suggested retail price",
+    "allowed": false,
+    "publicationBlocked": true,
+    "dependencies": [
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "vehicle_price",
+        "input_label": "Supplier vehicle price",
+        "claim_ids": [
+          "CLM-037"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "freight",
+        "input_label": "Ocean freight",
+        "claim_ids": [
+          "CLM-038"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "insurance",
+        "input_label": "Marine insurance",
+        "claim_ids": [
+          "CLM-039"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "customs_duty",
+        "input_label": "Customs duty",
+        "claim_ids": [
+          "CLM-011"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "statistical_fee",
+        "input_label": "Statistical fee",
+        "claim_ids": [
+          "CLM-012"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "minimum_flat_rate_tax",
+        "input_label": "Minimum flat-rate tax",
+        "claim_ids": [
+          "CLM-013"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "used_vehicle_valuation",
+        "input_label": "Used-vehicle customs valuation",
+        "claim_ids": [
+          "CLM-014"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "port_handling",
+        "input_label": "Port handling and clearance",
+        "claim_ids": [
+          "CLM-040"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "inland_transport",
+        "input_label": "Inland transport",
+        "claim_ids": [
+          "CLM-041"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "inspection",
+        "input_label": "Pre-delivery inspection",
+        "claim_ids": [
+          "CLM-042"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "contingency",
+        "input_label": "Contingency methodology",
+        "claim_ids": [
+          "CLM-043"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "vat",
+        "input_label": "Value-added tax",
+        "claim_ids": [
+          "CLM-010"
+        ]
+      },
+      {
+        "output_id": "calculator_retail_price",
+        "output_label": "Suggested retail price",
+        "input_id": "margin",
+        "input_label": "Commercial margin",
+        "claim_ids": [
+          "CLM-044"
+        ]
+      }
+    ],
+    "blockingClaimIds": [
+      "CLM-037",
+      "CLM-038",
+      "CLM-039",
+      "CLM-012",
+      "CLM-013",
+      "CLM-040",
+      "CLM-041",
+      "CLM-042",
+      "CLM-043",
+      "CLM-044"
+    ],
+    "unknownClaimIds": [],
+    "undeclaredInputIds": [],
+    "reason": "Publication blocked for Suggested retail price: every economic input must reference known, verified canonical claims."
+  },
+  "comparative_savings": {
+    "outputId": "comparative_savings",
+    "outputLabel": "Comparative savings",
+    "allowed": false,
+    "publicationBlocked": true,
+    "dependencies": [
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "vehicle_price",
+        "input_label": "Supplier vehicle price",
+        "claim_ids": [
+          "CLM-037"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "freight",
+        "input_label": "Ocean freight",
+        "claim_ids": [
+          "CLM-038"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "insurance",
+        "input_label": "Marine insurance",
+        "claim_ids": [
+          "CLM-039"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "customs_duty",
+        "input_label": "Customs duty",
+        "claim_ids": [
+          "CLM-011"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "statistical_fee",
+        "input_label": "Statistical fee",
+        "claim_ids": [
+          "CLM-012"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "minimum_flat_rate_tax",
+        "input_label": "Minimum flat-rate tax",
+        "claim_ids": [
+          "CLM-013"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "used_vehicle_valuation",
+        "input_label": "Used-vehicle customs valuation",
+        "claim_ids": [
+          "CLM-014"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "port_handling",
+        "input_label": "Port handling and clearance",
+        "claim_ids": [
+          "CLM-040"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "inland_transport",
+        "input_label": "Inland transport",
+        "claim_ids": [
+          "CLM-041"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "inspection",
+        "input_label": "Pre-delivery inspection",
+        "claim_ids": [
+          "CLM-042"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "contingency",
+        "input_label": "Contingency methodology",
+        "claim_ids": [
+          "CLM-043"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "vat",
+        "input_label": "Value-added tax",
+        "claim_ids": [
+          "CLM-010"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "margin",
+        "input_label": "Commercial margin",
+        "claim_ids": [
+          "CLM-044"
+        ]
+      },
+      {
+        "output_id": "comparative_savings",
+        "output_label": "Comparative savings",
+        "input_id": "savings_benchmark",
+        "input_label": "Market savings benchmark",
+        "claim_ids": [
+          "CLM-045"
+        ]
+      }
+    ],
+    "blockingClaimIds": [
+      "CLM-037",
+      "CLM-038",
+      "CLM-039",
+      "CLM-012",
+      "CLM-013",
+      "CLM-040",
+      "CLM-041",
+      "CLM-042",
+      "CLM-043",
+      "CLM-044",
+      "CLM-045"
+    ],
+    "unknownClaimIds": [],
+    "undeclaredInputIds": [],
+    "reason": "Publication blocked for Comparative savings: every economic input must reference known, verified canonical claims."
+  },
+  "currency_conversion": {
+    "outputId": "currency_conversion",
+    "outputLabel": "Currency conversion",
+    "allowed": false,
+    "publicationBlocked": true,
+    "dependencies": [
+      {
+        "output_id": "currency_conversion",
+        "output_label": "Currency conversion",
+        "input_id": "currency_rate",
+        "input_label": "Official currency conversion rate",
+        "claim_ids": [
+          "CLM-046"
+        ]
+      }
+    ],
+    "blockingClaimIds": [
+      "CLM-046"
+    ],
+    "unknownClaimIds": [],
+    "undeclaredInputIds": [],
+    "reason": "Publication blocked for Currency conversion: every economic input must reference known, verified canonical claims."
+  }
+} as const;
+
 export const PUBLICATION_GATE = {
   "publicPricesAllowed": false,
   "publicationBlocked": true,
   "blockingClaimIds": [
+    "CLM-037",
+    "CLM-038",
+    "CLM-039",
     "CLM-012",
-    "CLM-013"
+    "CLM-013",
+    "CLM-040",
+    "CLM-041",
+    "CLM-042",
+    "CLM-043",
+    "CLM-044",
+    "CLM-045",
+    "CLM-046"
   ],
-  "reason": "Canonical pricing assumptions or conflicts block public price, landed-cost, and savings publication."
+  "undeclaredInputIds": [],
+  "reason": "One or more public economic outputs lack complete, verified canonical evidence."
 } as const;

@@ -6,6 +6,10 @@
 **Run date:** 8 September 2026
 **Result:** 0 pass · 2 pass-with-defect · 4 fail, of 6 criteria
 
+> **Historical record only.** This result evaluates workload commit `6e2fb60` against MobStack `2fd0ab8`. It did not test the later combined `main` at `fdb70b3` or the Issue #7 corrective work. The historical findings below are preserved as recorded; current reconciliation and release disposition must be taken from the post-merge review and its corrective PR.
+
+Current reconciliation record: [`POST-MERGE-RECONCILIATION.md`](POST-MERGE-RECONCILIATION.md).
+
 ---
 
 ## What this is

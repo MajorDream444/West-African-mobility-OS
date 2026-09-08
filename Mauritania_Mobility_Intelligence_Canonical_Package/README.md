@@ -33,6 +33,7 @@ No vehicle purchase, dealership appointment, distributorship, exclusivity, joint
 - `docs/05-playbook/` - repeatable country-envoy playbook
 - `docs/06-agents/` - agent and skill architecture
 - `data/` - structured registers and schemas
+- `data/economic-dependencies.csv` - canonical per-output economic input and evidence dependencies
 - `models/` - economic models
 - `artifacts/` - approved external deliverables
 
@@ -56,4 +57,3 @@ Every material statement must be labeled as one of:
 - `CONFLICT` - two credible sources disagree; resolution required before external use
 
 The repository preserves historical statements even when later evidence changes the current truth.
-

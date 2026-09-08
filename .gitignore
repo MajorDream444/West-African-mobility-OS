@@ -20,5 +20,3 @@ dist/
 
 # Office and archive temp files
 ~$*
-node_modules/
-dist/

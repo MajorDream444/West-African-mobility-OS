@@ -11,7 +11,7 @@ import {
 import { LandedCostCalculator } from './LandedCostCalculator';
 import { VehicleComparisonModal } from './VehicleComparisonModal';
 import { GoogleSheetsManager } from './GoogleSheetsManager';
-import { publicationGate } from '../data/publicationGate';
+import { economicOutputGate } from '../data/publicationGate';
 import { 
   ShieldCheck, FileText, Building, Users, CheckCircle, Clock, AlertCircle, 
   Search, Filter, Plus, Download, ArrowLeft, ArrowUpRight, BarChart3, Database, 
@@ -38,6 +38,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   activeSpreadsheetId,
   onSpreadsheetConnected,
 }) => {
+  const dashboardPriceGate = economicOutputGate('dashboard_vehicle_price');
+  const dashboardLandedGate = economicOutputGate('dashboard_landed_cost');
   const [activeTab, setActiveTab] = useState<
     'overview' | 'claims' | 'suppliers' | 'calculator' | 'sprint' | 'workforce' | 'crm' | 'decisions' | 'sheets'
   >((initialTab as any) || 'overview');
@@ -801,7 +803,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                       <span className="text-[10px] text-[#7e91a6] block mb-2">{v.categoryLabel[currentLanguage] || v.genericName}</span>
                       
                       <div className="space-y-1 text-[11px] bg-[#0c131c] p-2 rounded border border-[#172332] mb-3">
-                        {publicationGate.publicPricesAllowed ? (
+                        {dashboardPriceGate.allowed && dashboardLandedGate.allowed ? (
                           <>
                             <div className="flex justify-between">
                               <span className="text-[#7e91a6]">FOB:</span>
@@ -814,7 +816,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                           </>
                         ) : (
                           <span className="font-semibold text-[#fbbf24]">
-                            Pricing blocked by {publicationGate.blockingClaimIds.join(', ')}
+                            Pricing blocked by {[...dashboardPriceGate.blockingClaimIds, ...dashboardLandedGate.blockingClaimIds].filter((id, index, ids) => ids.indexOf(id) === index).join(', ')}
                           </span>
                         )}
                       </div>

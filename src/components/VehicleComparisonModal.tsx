@@ -1,7 +1,7 @@
 import React from 'react';
 import { VehicleModel, Language } from '../types';
 import { TRANSLATIONS } from '../data/translations';
-import { publicationGate } from '../data/publicationGate';
+import { economicOutputGate } from '../data/publicationGate';
 import { X, ArrowRight, ShieldCheck, Thermometer, Wrench, DollarSign } from 'lucide-react';
 
 interface VehicleComparisonModalProps {
@@ -30,6 +30,8 @@ export const VehicleComparisonModal: React.FC<VehicleComparisonModalProps> = ({
   onSelectVehicleB,
 }) => {
   const t = TRANSLATIONS[currentLanguage];
+  const priceGate = economicOutputGate('comparison_vehicle_price');
+  const landedGate = economicOutputGate('comparison_landed_cost');
   const vehicles = propVehicles || [vehicleA, vehicleB].filter(Boolean) as VehicleModel[];
 
   if (vehicles.length === 0) return null;
@@ -164,7 +166,7 @@ export const VehicleComparisonModal: React.FC<VehicleComparisonModalProps> = ({
               <div className="font-semibold text-[#8ca1b8]">{t.comparison.fobRange}</div>
               {vehicles.map(v => (
                 <div key={v.id} className="font-mono font-bold text-[#e0b555]">
-                  {publicationGate.publicPricesAllowed ? `$${v.indicativeFobUsd.min.toLocaleString()} - $${v.indicativeFobUsd.max.toLocaleString()}` : 'Publication blocked'}
+                  {priceGate.allowed ? `$${v.indicativeFobUsd.min.toLocaleString()} - $${v.indicativeFobUsd.max.toLocaleString()}` : 'Publication blocked'}
                 </div>
               ))}
             </div>
@@ -173,7 +175,7 @@ export const VehicleComparisonModal: React.FC<VehicleComparisonModalProps> = ({
             <div className="grid grid-cols-4 gap-4 py-3 items-center">
               <div className="font-semibold text-[#8ca1b8]">{t.comparison.landedEstimate}</div>
               {vehicles.map(v => {
-                if (!publicationGate.publicPricesAllowed) return <div key={v.id} className="font-semibold text-[#fbbf24]">Blocked by {publicationGate.blockingClaimIds.join(', ')}</div>;
+                if (!landedGate.allowed) return <div key={v.id} className="font-semibold text-[#fbbf24]">Blocked by {landedGate.blockingClaimIds.join(', ')}</div>;
                 const midFob = (v.indicativeFobUsd.min + v.indicativeFobUsd.max) / 2;
                 const landed = (midFob + v.estimatedFreightUsd) * (1 + v.dutyRatePct) * (1 + v.vatRatePct) + v.localPortAndDocUsd;
                 return (
