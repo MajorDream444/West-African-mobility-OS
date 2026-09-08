@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  background: #0c131c;
+}
+
+html[dir="rtl"] body {
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+button, a, input, select, textarea {
+  outline-offset: 3px;
+}
