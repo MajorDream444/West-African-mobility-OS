@@ -42,6 +42,14 @@
 
 ## Readiness judgment
 
-- Internal demonstration: `PROPOSAL — SAFE WITH LABELS`. Use locally with the demonstration banner and no real data.
-- Controlled stakeholder demonstration: `PROPOSAL — CONDITIONALLY SAFE`. A human presenter must state that prices, partnerships, authorizations, financing, deposits, training and operating readiness are unconfirmed or blocked.
-- Public release: `OPEN — NOT SAFE`. Publication gates and production controls remain incomplete.
+- Internal local demonstration: `PASS`. Use only fictional `DEMO-*` data with the visible demonstration banner.
+- Controlled stakeholder demonstration: `HOLD`. A presenter protocol and disclosure checklist require human approval first.
+- Public release: `HOLD`. Unresolved canonical conflicts and incomplete production controls continue to block publication.
+- MobStack canary merge: `OPEN`. Human review of this branch against MobStack `main` at `2fd0ab8` is required before PR or merge authorization.
+
+These dispositions use the HAMAL/MobStack vocabulary: `PASS`, `HOLD`, `REDIRECT`, or `STOP`. “Conditionally safe” is not an operative disposition.
+
+## Review-scope correction
+
+- `VERIFIED`: The previously missing image is now available at the corrected attachment path and is no longer a substantive blocker.
+- `PROPOSAL`: Branch review should focus on code behavior, canonical evidence generation, publication gates, synthetic-data quarantine and doctrine alignment—not the superseded file-access error.
