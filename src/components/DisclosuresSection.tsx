@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../data/translations';
 import { CANONICAL_CLAIMS, HISTORICAL_CLAIM_CORRECTION, CANONICAL_DECISIONS } from '../data/canonicalData';
-import { publicationGate } from '../data/publicationGate';
+import { economicOutputGate, type EconomicOutputGate } from '../data/publicationGate';
 import { ShieldAlert, FileText, CheckCircle2, History, AlertTriangle, ArrowRight, Eye, ShieldCheck, Scale } from 'lucide-react';
 
 interface DisclosuresSectionProps {
   currentLanguage: Language;
   onOpenDashboard: (tab?: string) => void;
+  landedPricingGate?: EconomicOutputGate;
 }
 
 export const DisclosuresSection: React.FC<DisclosuresSectionProps> = ({
   currentLanguage,
   onOpenDashboard,
+  landedPricingGate = economicOutputGate('calculator_landed_cost'),
 }) => {
   const t = TRANSLATIONS[currentLanguage];
   const [filterClass, setFilterClass] = useState<string>('all');
@@ -20,7 +22,11 @@ export const DisclosuresSection: React.FC<DisclosuresSectionProps> = ({
   const statusItems = [
     { label: t.statusTicker.activeStatus, value: "Phase 0 Evidence Sprint", status: "Active" },
     { label: "Supplier Discovery", value: t.statusTicker.candidateModels, status: "Active" },
-    { label: "Landed Pricing", value: `Blocked by ${publicationGate.blockingClaimIds.join(', ')}`, status: "Publication Blocked" },
+    {
+      label: "Landed Pricing",
+      value: landedPricingGate.allowed ? 'Canonical evidence dependencies verified' : landedPricingGate.reason,
+      status: landedPricingGate.allowed ? 'Evidence Verified' : 'Publication Blocked'
+    },
     { label: "OEM Authorization", value: t.statusTicker.oemAuth, status: "Transparent" },
     { label: "Customer Deposits", value: t.statusTicker.deposits, status: "Gated (Zero Deposit)" },
     { label: "Commercial Authority", value: "Evaluation Only • No Sovereign Mandate", status: "Strict" }

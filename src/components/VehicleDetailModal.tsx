@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Language, VehicleModel } from '../types';
-import { publicationGate } from '../data/publicationGate';
+import { economicOutputGate } from '../data/publicationGate';
 
 interface VehicleDetailModalProps {
   vehicle: VehicleModel | null;
@@ -11,6 +11,7 @@ interface VehicleDetailModalProps {
 }
 
 export const VehicleDetailModal: React.FC<VehicleDetailModalProps> = ({ vehicle, isOpen, onClose, currentLanguage, onSelectForInquiry }) => {
+  const priceGate = economicOutputGate('catalog_vehicle_price');
   if (!isOpen || !vehicle) return null;
   return (
     <div role="dialog" aria-modal="true" aria-label={vehicle.model} className="fixed inset-0 z-50 grid place-items-center bg-black/80 p-4">
@@ -22,7 +23,7 @@ export const VehicleDetailModal: React.FC<VehicleDetailModalProps> = ({ vehicle,
         <p className="mt-5 text-sm text-[#a9bbcd]">{vehicle.description[currentLanguage]}</p>
         <div className="mt-5 rounded-xl border border-amber-500/40 bg-amber-950/30 p-4">
           <div className="font-bold text-amber-300">Awaiting manufacturer documentation</div>
-          <p className="mt-1 text-xs text-[#a9bbcd]">No specification, quotation, warranty, readiness score or landed cost is represented. {publicationGate.reason}</p>
+          <p className="mt-1 text-xs text-[#a9bbcd]">No specification, quotation, warranty, readiness score or landed cost is represented. {priceGate.reason}</p>
         </div>
         <button onClick={() => { onSelectForInquiry(vehicle.id); onClose(); }} className="mt-6 rounded-lg bg-[#b58a35] px-4 py-2 text-sm font-bold text-[#0c131c]">Register non-binding demonstration interest</button>
       </div>

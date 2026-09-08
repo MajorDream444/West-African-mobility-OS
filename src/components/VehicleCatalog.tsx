@@ -2,19 +2,21 @@ import React, { useState } from 'react';
 import { VehicleModel, Language } from '../types';
 import { CANDIDATE_VEHICLES } from '../data/canonicalData';
 import { TRANSLATIONS } from '../data/translations';
-import { publicationGate } from '../data/publicationGate';
+import { economicOutputGate, type EconomicOutputGate } from '../data/publicationGate';
 import { Search, Filter, Compass, Thermometer, ShieldAlert, ArrowUpRight, Gauge, Check } from 'lucide-react';
 
 interface VehicleCatalogProps {
   currentLanguage: Language;
   onSelectVehicle: (vehicle: VehicleModel) => void;
   onExpressInterest: (vehicleId: string) => void;
+  priceGate?: EconomicOutputGate;
 }
 
 export const VehicleCatalog: React.FC<VehicleCatalogProps> = ({
   currentLanguage,
   onSelectVehicle,
   onExpressInterest,
+  priceGate = economicOutputGate('catalog_vehicle_price'),
 }) => {
   const t = TRANSLATIONS[currentLanguage];
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -170,11 +172,11 @@ export const VehicleCatalog: React.FC<VehicleCatalogProps> = ({
                   {/* Canonical publication gate */}
                   <div className="bg-[#131d2a] p-3 rounded-lg border border-[#1c2a3c] space-y-1.5">
                     <div className="text-xs font-semibold text-[#fbbf24]">
-                      {publicationGate.publicationBlocked ? 'Public pricing blocked' : 'Public pricing evidence approved'}
+                      {priceGate.publicationBlocked ? 'Public pricing blocked' : 'Public pricing evidence approved'}
                     </div>
                     <div className="text-[11px] text-[#8fa4bb]">
-                      {publicationGate.reason}
-                      {publicationGate.publicationBlocked && ` Blocking claims: ${publicationGate.blockingClaimIds.join(', ')}.`}
+                      {priceGate.reason}
+                      {priceGate.publicationBlocked && priceGate.blockingClaimIds.length > 0 && ` Blocking claims: ${priceGate.blockingClaimIds.join(', ')}.`}
                     </div>
                   </div>
 

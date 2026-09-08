@@ -1,0 +1,68 @@
+output_id,output_label,input_id,input_label,claim_ids
+catalog_vehicle_price,Vehicle catalog price,vehicle_price,Supplier vehicle price,CLM-037
+dashboard_vehicle_price,Dashboard vehicle price,vehicle_price,Supplier vehicle price,CLM-037
+comparison_vehicle_price,Vehicle comparison price,vehicle_price,Supplier vehicle price,CLM-037
+dashboard_landed_cost,Dashboard landed cost,vehicle_price,Supplier vehicle price,CLM-037
+dashboard_landed_cost,Dashboard landed cost,freight,Ocean freight,CLM-038
+dashboard_landed_cost,Dashboard landed cost,insurance,Marine insurance,CLM-039
+dashboard_landed_cost,Dashboard landed cost,customs_duty,Customs duty,CLM-011
+dashboard_landed_cost,Dashboard landed cost,statistical_fee,Statistical fee,CLM-012
+dashboard_landed_cost,Dashboard landed cost,minimum_flat_rate_tax,Minimum flat-rate tax,CLM-013
+dashboard_landed_cost,Dashboard landed cost,used_vehicle_valuation,Used-vehicle customs valuation,CLM-014
+dashboard_landed_cost,Dashboard landed cost,port_handling,Port handling and clearance,CLM-040
+dashboard_landed_cost,Dashboard landed cost,inland_transport,Inland transport,CLM-041
+dashboard_landed_cost,Dashboard landed cost,inspection,Pre-delivery inspection,CLM-042
+dashboard_landed_cost,Dashboard landed cost,contingency,Contingency methodology,CLM-043
+dashboard_landed_cost,Dashboard landed cost,vat,Value-added tax,CLM-010
+comparison_landed_cost,Vehicle comparison landed cost,vehicle_price,Supplier vehicle price,CLM-037
+comparison_landed_cost,Vehicle comparison landed cost,freight,Ocean freight,CLM-038
+comparison_landed_cost,Vehicle comparison landed cost,insurance,Marine insurance,CLM-039
+comparison_landed_cost,Vehicle comparison landed cost,customs_duty,Customs duty,CLM-011
+comparison_landed_cost,Vehicle comparison landed cost,statistical_fee,Statistical fee,CLM-012
+comparison_landed_cost,Vehicle comparison landed cost,minimum_flat_rate_tax,Minimum flat-rate tax,CLM-013
+comparison_landed_cost,Vehicle comparison landed cost,used_vehicle_valuation,Used-vehicle customs valuation,CLM-014
+comparison_landed_cost,Vehicle comparison landed cost,port_handling,Port handling and clearance,CLM-040
+comparison_landed_cost,Vehicle comparison landed cost,inland_transport,Inland transport,CLM-041
+comparison_landed_cost,Vehicle comparison landed cost,inspection,Pre-delivery inspection,CLM-042
+comparison_landed_cost,Vehicle comparison landed cost,contingency,Contingency methodology,CLM-043
+comparison_landed_cost,Vehicle comparison landed cost,vat,Value-added tax,CLM-010
+calculator_landed_cost,Landed-cost calculator output,vehicle_price,Supplier vehicle price,CLM-037
+calculator_landed_cost,Landed-cost calculator output,freight,Ocean freight,CLM-038
+calculator_landed_cost,Landed-cost calculator output,insurance,Marine insurance,CLM-039
+calculator_landed_cost,Landed-cost calculator output,customs_duty,Customs duty,CLM-011
+calculator_landed_cost,Landed-cost calculator output,statistical_fee,Statistical fee,CLM-012
+calculator_landed_cost,Landed-cost calculator output,minimum_flat_rate_tax,Minimum flat-rate tax,CLM-013
+calculator_landed_cost,Landed-cost calculator output,used_vehicle_valuation,Used-vehicle customs valuation,CLM-014
+calculator_landed_cost,Landed-cost calculator output,port_handling,Port handling and clearance,CLM-040
+calculator_landed_cost,Landed-cost calculator output,inland_transport,Inland transport,CLM-041
+calculator_landed_cost,Landed-cost calculator output,inspection,Pre-delivery inspection,CLM-042
+calculator_landed_cost,Landed-cost calculator output,contingency,Contingency methodology,CLM-043
+calculator_landed_cost,Landed-cost calculator output,vat,Value-added tax,CLM-010
+calculator_retail_price,Suggested retail price,vehicle_price,Supplier vehicle price,CLM-037
+calculator_retail_price,Suggested retail price,freight,Ocean freight,CLM-038
+calculator_retail_price,Suggested retail price,insurance,Marine insurance,CLM-039
+calculator_retail_price,Suggested retail price,customs_duty,Customs duty,CLM-011
+calculator_retail_price,Suggested retail price,statistical_fee,Statistical fee,CLM-012
+calculator_retail_price,Suggested retail price,minimum_flat_rate_tax,Minimum flat-rate tax,CLM-013
+calculator_retail_price,Suggested retail price,used_vehicle_valuation,Used-vehicle customs valuation,CLM-014
+calculator_retail_price,Suggested retail price,port_handling,Port handling and clearance,CLM-040
+calculator_retail_price,Suggested retail price,inland_transport,Inland transport,CLM-041
+calculator_retail_price,Suggested retail price,inspection,Pre-delivery inspection,CLM-042
+calculator_retail_price,Suggested retail price,contingency,Contingency methodology,CLM-043
+calculator_retail_price,Suggested retail price,vat,Value-added tax,CLM-010
+calculator_retail_price,Suggested retail price,margin,Commercial margin,CLM-044
+comparative_savings,Comparative savings,vehicle_price,Supplier vehicle price,CLM-037
+comparative_savings,Comparative savings,freight,Ocean freight,CLM-038
+comparative_savings,Comparative savings,insurance,Marine insurance,CLM-039
+comparative_savings,Comparative savings,customs_duty,Customs duty,CLM-011
+comparative_savings,Comparative savings,statistical_fee,Statistical fee,CLM-012
+comparative_savings,Comparative savings,minimum_flat_rate_tax,Minimum flat-rate tax,CLM-013
+comparative_savings,Comparative savings,used_vehicle_valuation,Used-vehicle customs valuation,CLM-014
+comparative_savings,Comparative savings,port_handling,Port handling and clearance,CLM-040
+comparative_savings,Comparative savings,inland_transport,Inland transport,CLM-041
+comparative_savings,Comparative savings,inspection,Pre-delivery inspection,CLM-042
+comparative_savings,Comparative savings,contingency,Contingency methodology,CLM-043
+comparative_savings,Comparative savings,vat,Value-added tax,CLM-010
+comparative_savings,Comparative savings,margin,Commercial margin,CLM-044
+comparative_savings,Comparative savings,savings_benchmark,Market savings benchmark,CLM-045
+currency_conversion,Currency conversion,currency_rate,Official currency conversion rate,CLM-046
