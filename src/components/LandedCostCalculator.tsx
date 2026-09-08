@@ -35,9 +35,7 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
   const [inlandTransport, setInlandTransport] = useState<number>(250); // USD
   const [preDeliveryInspection, setPreDeliveryInspection] = useState<number>(300); // USD
   const [contingencyBuffer, setContingencyBuffer] = useState<number>(500); // USD
-  const [exchangeRate, setExchangeRate] = useState<number>(39.8); // MRU per USD
   const [targetMargin, setTargetMargin] = useState<number>(18); // %
-  const [benchmarkPrice, setBenchmarkPrice] = useState<number>(68000); // USD (e.g. used Land Cruiser/Hilux)
 
   // Sync with selected vehicle
   const handleVehicleSelect = (id: string) => {
@@ -53,7 +51,6 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
       } else {
         setCustomsDutyRate(20);
       }
-      setBenchmarkPrice(v.category === 'suv_4x4' ? 68000 : v.category === 'pickup_commercial' ? 45000 : 38000);
     }
   };
 
@@ -65,9 +62,7 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
   const vatAmount = (taxableBase * vatRate) / 100;
   const localPortAndClearance = portHandlingPanpa + inlandTransport + preDeliveryInspection + contingencyBuffer;
   const totalLandedCostUsd = cifNouakchott + customsDutyAmount + vatAmount + localPortAndClearance;
-  const totalLandedCostMru = totalLandedCostUsd * exchangeRate;
   const suggestedRetailUsd = totalLandedCostUsd * (1 + targetMargin / 100);
-  const suggestedRetailMru = suggestedRetailUsd * exchangeRate;
 
   return (
     <div className="bg-[#0e1622] border border-[#1e2e42] rounded-2xl p-6 sm:p-8">
@@ -239,7 +234,6 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
           <div>
             <h3 className="text-xs font-bold text-[#f0f4f8] uppercase tracking-wider mb-4 pb-2 border-b border-[#1b2b3d] flex items-center justify-between">
               <span>Landed Cost Waterfall</span>
-              <span className="font-mono text-[#7e91a6] text-[11px]">1 USD = {exchangeRate} MRU</span>
             </h3>
 
             {/* Waterfall Line Items */}
@@ -280,9 +274,6 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
                   <span className="text-xl font-extrabold text-[#f0f4f8]">
                     ${Math.round(totalLandedCostUsd).toLocaleString()} USD
                   </span>
-                  <div className="text-xs font-mono font-semibold text-[#e0b555]">
-                    {Math.round(totalLandedCostMru).toLocaleString()} MRU
-                  </div>
                 </div>
               </div>
             </div>
@@ -297,9 +288,6 @@ export const LandedCostCalculator: React.FC<LandedCostCalculatorProps> = ({ curr
                   <span className="text-xl font-black text-white">
                     ${Math.round(suggestedRetailUsd).toLocaleString()} USD
                   </span>
-                  <div className="text-xs font-mono text-[#34d399]">
-                    {Math.round(suggestedRetailMru).toLocaleString()} MRU
-                  </div>
                 </div>
               </div>
 

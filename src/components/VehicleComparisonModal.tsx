@@ -179,9 +179,6 @@ export const VehicleComparisonModal: React.FC<VehicleComparisonModalProps> = ({
                 return (
                   <div key={v.id} className="font-mono font-bold text-[#38bdf8]">
                     ${Math.round(landed).toLocaleString()}
-                    <span className="block text-[10px] text-[#7e91a6] font-normal">
-                      ≈ {(Math.round(landed * 39.8)).toLocaleString()} MRU
-                    </span>
                   </div>
                 );
               })}

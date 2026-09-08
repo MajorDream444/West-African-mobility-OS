@@ -2,7 +2,7 @@
 
 **Import status:** `UNMODIFIED PROTOTYPE IMPORT`  
 **Import date:** 2026-09-06  
-**Source:** `/Users/majordreamwilliams/Downloads/west-african-mobility-os (1)`  
+**Source:** local AI Studio prototype export supplied for controlled reconciliation
 **Import branch:** `ai-studio/mvp-one-shot`
 
 ## Purpose

@@ -169,8 +169,13 @@ export const VehicleCatalog: React.FC<VehicleCatalogProps> = ({
 
                   {/* Canonical publication gate */}
                   <div className="bg-[#131d2a] p-3 rounded-lg border border-[#1c2a3c] space-y-1.5">
-                    <div className="text-xs font-semibold text-[#fbbf24]">Public pricing blocked</div>
-                    <div className="text-[11px] text-[#8fa4bb]">{publicationGate.reason} Blocking claims: {publicationGate.blockingClaimIds.join(', ')}.</div>
+                    <div className="text-xs font-semibold text-[#fbbf24]">
+                      {publicationGate.publicationBlocked ? 'Public pricing blocked' : 'Public pricing evidence approved'}
+                    </div>
+                    <div className="text-[11px] text-[#8fa4bb]">
+                      {publicationGate.reason}
+                      {publicationGate.publicationBlocked && ` Blocking claims: ${publicationGate.blockingClaimIds.join(', ')}.`}
+                    </div>
                   </div>
 
                   {/* Actions */}

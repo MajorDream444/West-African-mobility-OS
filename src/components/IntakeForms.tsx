@@ -369,9 +369,9 @@ export const IntakeForms: React.FC<IntakeFormsProps> = ({
                       onChange={(e) => setPersonalForm({ ...personalForm, budgetRange: e.target.value })}
                       className="w-full p-2.5 bg-[#0c131c] border border-[#202f43] rounded-lg text-white focus:outline-none focus:border-[#b58a35]"
                     >
-                      <option value="Moins de $20,000 USD">Moins de $20,000 USD (&lt; 800,000 MRU)</option>
-                      <option value="$20,000 - $30,000 USD">$20,000 - $30,000 USD (~1,000,000 MRU)</option>
-                      <option value="$30,000 - $45,000 USD">$30,000 - $45,000 USD (~1,500,000 MRU)</option>
+                      <option value="Moins de $20,000 USD">Moins de $20,000 USD</option>
+                      <option value="$20,000 - $30,000 USD">$20,000 - $30,000 USD</option>
+                      <option value="$30,000 - $45,000 USD">$30,000 - $45,000 USD</option>
                       <option value="Plus de $45,000 USD">Plus de $45,000 USD (Haut de gamme)</option>
                     </select>
                   </div>
@@ -391,7 +391,7 @@ export const IntakeForms: React.FC<IntakeFormsProps> = ({
                   </div>
 
                   <div>
-                    <label className="block text-[#8fa4bb] mb-1 font-medium">Payment information</label>
+                    <label className="block text-[#8fa4bb] mb-1 font-medium">Informations de paiement</label>
                     <select
                       value={personalForm.depositReadiness}
                       onChange={(e) => setPersonalForm({ ...personalForm, depositReadiness: e.target.value })}

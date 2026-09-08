@@ -11,6 +11,7 @@ import {
 import { LandedCostCalculator } from './LandedCostCalculator';
 import { VehicleComparisonModal } from './VehicleComparisonModal';
 import { GoogleSheetsManager } from './GoogleSheetsManager';
+import { publicationGate } from '../data/publicationGate';
 import { 
   ShieldCheck, FileText, Building, Users, CheckCircle, Clock, AlertCircle, 
   Search, Filter, Plus, Download, ArrowLeft, ArrowUpRight, BarChart3, Database, 
@@ -800,18 +801,22 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                       <span className="text-[10px] text-[#7e91a6] block mb-2">{v.categoryLabel[currentLanguage] || v.genericName}</span>
                       
                       <div className="space-y-1 text-[11px] bg-[#0c131c] p-2 rounded border border-[#172332] mb-3">
-                        <div className="flex justify-between">
-                          <span className="text-[#7e91a6]">FOB:</span>
-                          <span className="font-bold text-[#e0b555]">${v.indicativeFobUsd.min.toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-[#7e91a6]">Landed:</span>
-                          <span className="font-bold text-white">${Math.round(v.indicativeFobUsd.min * 1.35).toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-[#7e91a6]">Benchmark:</span>
-                          <span className="text-[#7e91a6]">${(v.category === 'suv_4x4' ? 68000 : 42000).toLocaleString()}</span>
-                        </div>
+                        {publicationGate.publicPricesAllowed ? (
+                          <>
+                            <div className="flex justify-between">
+                              <span className="text-[#7e91a6]">FOB:</span>
+                              <span className="font-bold text-[#e0b555]">${v.indicativeFobUsd.min.toLocaleString()}</span>
+                            </div>
+                            <div className="flex justify-between">
+                              <span className="text-[#7e91a6]">Landed:</span>
+                              <span className="font-bold text-white">${Math.round(v.indicativeFobUsd.min * 1.35).toLocaleString()}</span>
+                            </div>
+                          </>
+                        ) : (
+                          <span className="font-semibold text-[#fbbf24]">
+                            Pricing blocked by {publicationGate.blockingClaimIds.join(', ')}
+                          </span>
+                        )}
                       </div>
                     </div>
 

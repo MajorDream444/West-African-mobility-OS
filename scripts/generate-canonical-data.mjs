@@ -8,6 +8,7 @@ const decisionsPath = resolve(root, 'Mauritania_Mobility_Intelligence_Canonical_
 const outputPath = resolve(root, 'src/generated/canonicalGovernance.ts');
 const allowedClasses = new Set(['VERIFIED', 'REPORTED', 'ASSUMPTION', 'PROPOSAL', 'OPEN', 'CONFLICT']);
 const claimFields = ['claim_id', 'statement', 'classification', 'source', 'source_date', 'source_owner', 'geography', 'lane', 'confidence', 'status', 'validation_owner', 'next_action', 'last_reviewed'];
+export const PRICING_CLAIM_IDS = ['CLM-010', 'CLM-011', 'CLM-012', 'CLM-013', 'CLM-014'];
 
 export function parseCsv(text) {
   const rows = [];
@@ -78,16 +79,25 @@ export function parseDecisions(text) {
 }
 
 export function publicationGate(claims) {
-  const blockers = claims.filter((claim) =>
-    claim.classification === 'CONFLICT' &&
-    claim.status.toLowerCase() !== 'resolved'
-  );
+  const pricingClaims = new Map(claims
+    .filter((claim) => PRICING_CLAIM_IDS.includes(claim.claim_id))
+    .map((claim) => [claim.claim_id, claim]));
+  const blockers = PRICING_CLAIM_IDS.filter((claimId) => {
+    const claim = pricingClaims.get(claimId);
+    return !claim || ['ASSUMPTION', 'CONFLICT'].includes(claim.classification);
+  });
   return {
     publicPricesAllowed: blockers.length === 0,
     publicationBlocked: blockers.length > 0,
-    blockingClaimIds: blockers.map((claim) => claim.claim_id),
-    reason: blockers.length ? 'Unresolved canonical evidence conflicts block public landed-cost publication.' : 'No unresolved canonical conflicts.'
+    blockingClaimIds: blockers,
+    reason: blockers.length ? 'Canonical pricing assumptions or conflicts block public price, landed-cost, and savings publication.' : 'Canonical pricing claims contain no assumptions or conflicts.'
   };
+}
+
+export function canonicalRedefinitions(source, canonicalIds) {
+  return [...source.matchAll(/(?:claim_id|id)\s*:\s*['"]((?:CLM|DEC)-\d{3})['"]/g)]
+    .map((match) => match[1])
+    .filter((id) => canonicalIds.has(id));
 }
 
 export function renderGenerated(claims, decisions) {
@@ -110,9 +120,8 @@ export async function assertNoCanonicalRedefinitions(claims, decisions) {
   const files = await sourceFiles(resolve(root, 'src'));
   for (const file of files) {
     const source = await readFile(file, 'utf8');
-    for (const match of source.matchAll(/(?:claim_id|id)\s*:\s*['"]((?:CLM|DEC)-\d{3})['"]/g)) {
-      if (canonicalIds.has(match[1])) throw new Error(`Canonical ID ${match[1]} is redefined outside generated governance data: ${file}`);
-    }
+    const [redefinedId] = canonicalRedefinitions(source, canonicalIds);
+    if (redefinedId) throw new Error(`Canonical ID ${redefinedId} is redefined outside generated governance data: ${file}`);
   }
 }
 

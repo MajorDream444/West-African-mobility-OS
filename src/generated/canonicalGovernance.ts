@@ -688,7 +688,7 @@ export const CANONICAL_DECISIONS: readonly Decision[] = [
   {
     "id": "DEC-021",
     "date": "2026-09-06",
-    "decision": "Promote the reviewed 36-claim, 20-decision governance package as the successor canonical baseline only with explicit approval from Major Dream Williams, while preserving the previous GitHub baseline in Git history.",
+    "decision": "Promote the reviewed 36-claim, 20-decision predecessor package as the successor canonical baseline only with explicit approval from Major Dream Williams, while preserving the previous GitHub baseline in Git history. DEC-021 brings the current register total to 21 decisions.",
     "status": "Current",
     "rationale": "Major Dream Williams explicitly authorized the controlled reconciliation and promotion on 2026-09-06. This recorded approval prevents a newer attachment from becoming authoritative merely by being newer."
   }
@@ -719,5 +719,5 @@ export const PUBLICATION_GATE = {
     "CLM-012",
     "CLM-013"
   ],
-  "reason": "Unresolved canonical evidence conflicts block public landed-cost publication."
+  "reason": "Canonical pricing assumptions or conflicts block public price, landed-cost, and savings publication."
 } as const;

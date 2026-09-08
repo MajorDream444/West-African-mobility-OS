@@ -134,7 +134,7 @@ export const HowOrderingWorks: React.FC<HowOrderingWorksProps> = ({
           ))}
         </div>
 
-        {/* Escrow Fiduciary Guarantee Card */}
+        {/* Deposit and publication gate */}
         <div className="bg-[#101a27] border border-[#1f3046] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-start gap-4">
             <div className="p-3 rounded-xl bg-[#172638] border border-[#233852] text-[#e0b555] shrink-0">
